@@ -15,6 +15,8 @@ import java.sql.SQLException;
  */
 public class Conexion {
     
+    
+    
     //Constantes para establecer la conexion con la BBDD
     private final String usuario= "dani";
     private final String password = "1234";
