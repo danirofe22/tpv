@@ -3,21 +3,26 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package view;
+package view.tecladoNum;
 
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import model.Usuario;
 
 /**
  *
  * @author drofe
  */
 public class lblImageUser extends JLabel {
-
-    /**
-     * Creates new form lblImageUser
-     */
+    
+    Usuario user;
+    
     public lblImageUser() {
         initComponents();
+        this.user = new Usuario();
+    }
+    public void setIcono(Usuario user){
+        this.setIcon(user.getImg());
     }
 
     /**
@@ -28,7 +33,18 @@ public class lblImageUser extends JLabel {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                formMouseClicked(evt);
+            }
+        });
     }// </editor-fold>//GEN-END:initComponents
+
+    private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_formMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

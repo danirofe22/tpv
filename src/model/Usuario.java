@@ -5,6 +5,8 @@
  */
 package model;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author drofe
@@ -14,12 +16,22 @@ public class Usuario {
     private String apellidos;
     private int login;
     private int password;
+    private ImageIcon img;
+    
+    public Usuario(){
+        this.nombre = "";
+        this.apellidos = "";
+        this.login = 0;
+        this.password = 0;
+        this.img = new ImageIcon();
+    }
 
-    public Usuario(String nombre, String apellidos, int login, int password) {
+    public Usuario(String nombre, String apellidos, int login, int password, ImageIcon img) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.login = login;
         this.password = password;
+        this.img = img;
     }
 
     public String getNombre() {
@@ -38,6 +50,10 @@ public class Usuario {
         return password;
     }
 
+    public ImageIcon getImg() {
+        return img;
+    }
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -54,10 +70,16 @@ public class Usuario {
         this.password = password;
     }
 
+    public void setImg(ImageIcon img) {
+        this.img = img;
+    }
+
     @Override
     public String toString() {
-        return "Usuario{" + "nombre=" + nombre + ", apellidos=" + apellidos + ", login=" + login + ", password=" + password + '}';
+        return "Usuario{" + "nombre=" + nombre + ", apellidos=" + apellidos + ", login=" + login + ", password=" + password + ", img=" + img + '}';
     }
     
+
+   
     
 }

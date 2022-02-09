@@ -6,6 +6,7 @@
 package test;
 
 import java.sql.SQLException;
+import javax.swing.ImageIcon;
 import model.Conexion;
 import model.ConsultasDb;
 import model.Producto;
@@ -28,10 +29,10 @@ public class Tpv {
         ConsultasDb cdb = new ConsultasDb();
         
         //Usuarios para prubas
-        Usuario user = new Usuario("jose","rofe",1234,1234);
-        Usuario user1 = new Usuario("dani","jimenez",1002,4321);
-        Usuario user2 = new Usuario("mario","fernandez",1003,4321);
-        Usuario user3 = new Usuario("miguel","velasco",0,4321);
+        Usuario user = new Usuario("jose","rofe",1234,1234, new ImageIcon());
+        Usuario user1 = new Usuario("dani","jimenez",1002,4321,new ImageIcon());
+        Usuario user2 = new Usuario("mario","fernandez",1003,4321,new ImageIcon());
+        Usuario user3 = new Usuario("miguel","velasco",0,4321,new ImageIcon());
         
         Producto prod = new Producto("cafe solo", 1.20f, 100, 1);
         Producto prod1 = new Producto("cafe cortado", 1.20f, 100, 2);

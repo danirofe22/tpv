@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package view;
+package view.tecladoNum;
 
 import javax.swing.JPanel;
 
@@ -29,18 +29,18 @@ public class Teclado extends JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnTeclado1 = new view.btnTeclado();
-        btnTeclado2 = new view.btnTeclado();
-        btnTeclado3 = new view.btnTeclado();
-        btnTeclado4 = new view.btnTeclado();
-        btnTeclado5 = new view.btnTeclado();
-        btnTeclado6 = new view.btnTeclado();
-        btnTeclado7 = new view.btnTeclado();
-        btnTeclado8 = new view.btnTeclado();
-        btnTeclado9 = new view.btnTeclado();
-        btnTeclado10 = new view.btnTeclado();
-        btnTeclado11 = new view.btnTeclado();
-        OK = new view.btnTeclado();
+        btnTeclado1 = new view.tecladoNum.btnTeclado();
+        btnTeclado2 = new view.tecladoNum.btnTeclado();
+        btnTeclado3 = new view.tecladoNum.btnTeclado();
+        btnTeclado4 = new view.tecladoNum.btnTeclado();
+        btnTeclado5 = new view.tecladoNum.btnTeclado();
+        btnTeclado6 = new view.tecladoNum.btnTeclado();
+        btnTeclado7 = new view.tecladoNum.btnTeclado();
+        btnTeclado8 = new view.tecladoNum.btnTeclado();
+        btnTeclado9 = new view.tecladoNum.btnTeclado();
+        btnTeclado10 = new view.tecladoNum.btnTeclado();
+        btnTeclado11 = new view.tecladoNum.btnTeclado();
+        OK = new view.tecladoNum.btnTeclado();
 
         btnTeclado1.setText("7");
         btnTeclado1.addActionListener(new java.awt.event.ActionListener() {
@@ -142,17 +142,17 @@ public class Teclado extends JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private view.btnTeclado OK;
-    private view.btnTeclado btnTeclado1;
-    private view.btnTeclado btnTeclado10;
-    private view.btnTeclado btnTeclado11;
-    private view.btnTeclado btnTeclado2;
-    private view.btnTeclado btnTeclado3;
-    private view.btnTeclado btnTeclado4;
-    private view.btnTeclado btnTeclado5;
-    private view.btnTeclado btnTeclado6;
-    private view.btnTeclado btnTeclado7;
-    private view.btnTeclado btnTeclado8;
-    private view.btnTeclado btnTeclado9;
+    private view.tecladoNum.btnTeclado OK;
+    private view.tecladoNum.btnTeclado btnTeclado1;
+    private view.tecladoNum.btnTeclado btnTeclado10;
+    private view.tecladoNum.btnTeclado btnTeclado11;
+    private view.tecladoNum.btnTeclado btnTeclado2;
+    private view.tecladoNum.btnTeclado btnTeclado3;
+    private view.tecladoNum.btnTeclado btnTeclado4;
+    private view.tecladoNum.btnTeclado btnTeclado5;
+    private view.tecladoNum.btnTeclado btnTeclado6;
+    private view.tecladoNum.btnTeclado btnTeclado7;
+    private view.tecladoNum.btnTeclado btnTeclado8;
+    private view.tecladoNum.btnTeclado btnTeclado9;
     // End of variables declaration//GEN-END:variables
 }

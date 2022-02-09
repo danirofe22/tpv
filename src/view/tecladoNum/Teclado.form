@@ -82,7 +82,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="view.btnTeclado" name="btnTeclado1">
+    <Component class="view.tecladoNum.btnTeclado" name="btnTeclado1">
       <Properties>
         <Property name="text" type="java.lang.String" value="7"/>
       </Properties>
@@ -90,7 +90,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnTeclado1ActionPerformed"/>
       </Events>
     </Component>
-    <Component class="view.btnTeclado" name="btnTeclado2">
+    <Component class="view.tecladoNum.btnTeclado" name="btnTeclado2">
       <Properties>
         <Property name="text" type="java.lang.String" value="8"/>
       </Properties>
@@ -98,44 +98,44 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnTeclado2ActionPerformed"/>
       </Events>
     </Component>
-    <Component class="view.btnTeclado" name="btnTeclado3">
+    <Component class="view.tecladoNum.btnTeclado" name="btnTeclado3">
       <Properties>
         <Property name="text" type="java.lang.String" value="9"/>
       </Properties>
     </Component>
-    <Component class="view.btnTeclado" name="btnTeclado4">
+    <Component class="view.tecladoNum.btnTeclado" name="btnTeclado4">
       <Properties>
         <Property name="text" type="java.lang.String" value="4"/>
       </Properties>
     </Component>
-    <Component class="view.btnTeclado" name="btnTeclado5">
+    <Component class="view.tecladoNum.btnTeclado" name="btnTeclado5">
       <Properties>
         <Property name="text" type="java.lang.String" value="5"/>
       </Properties>
     </Component>
-    <Component class="view.btnTeclado" name="btnTeclado6">
+    <Component class="view.tecladoNum.btnTeclado" name="btnTeclado6">
       <Properties>
         <Property name="text" type="java.lang.String" value="6"/>
       </Properties>
     </Component>
-    <Component class="view.btnTeclado" name="btnTeclado7">
+    <Component class="view.tecladoNum.btnTeclado" name="btnTeclado7">
       <Properties>
         <Property name="text" type="java.lang.String" value="1"/>
       </Properties>
     </Component>
-    <Component class="view.btnTeclado" name="btnTeclado8">
+    <Component class="view.tecladoNum.btnTeclado" name="btnTeclado8">
       <Properties>
         <Property name="text" type="java.lang.String" value="2"/>
       </Properties>
     </Component>
-    <Component class="view.btnTeclado" name="btnTeclado9">
+    <Component class="view.tecladoNum.btnTeclado" name="btnTeclado9">
       <Properties>
         <Property name="text" type="java.lang.String" value="3"/>
       </Properties>
     </Component>
-    <Component class="view.btnTeclado" name="btnTeclado10">
+    <Component class="view.tecladoNum.btnTeclado" name="btnTeclado10">
     </Component>
-    <Component class="view.btnTeclado" name="btnTeclado11">
+    <Component class="view.tecladoNum.btnTeclado" name="btnTeclado11">
       <Properties>
         <Property name="text" type="java.lang.String" value="BORRAR"/>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -143,7 +143,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="view.btnTeclado" name="OK">
+    <Component class="view.tecladoNum.btnTeclado" name="OK">
       <Properties>
         <Property name="text" type="java.lang.String" value="OK"/>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">

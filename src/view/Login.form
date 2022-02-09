@@ -38,7 +38,7 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="66" max="32767" attributes="0"/>
+              <EmptySpace pref="26" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
                   <Component id="teclado1" min="-2" max="-2" attributes="0"/>
                   <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
@@ -49,7 +49,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="view.Teclado" name="teclado1">
+    <Component class="view.tecladoNum.Teclado" name="teclado1">
     </Component>
     <Container class="javax.swing.JPanel" name="jPanel1">
 
@@ -143,7 +143,7 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="90" max="32767" attributes="0"/>
+                  <EmptySpace pref="130" max="32767" attributes="0"/>
                   <Component id="jLabel2" min="-2" pref="70" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -151,7 +151,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                       <Component id="jLabel3" min="-2" pref="70" max="-2" attributes="0"/>
-                      <EmptySpace pref="91" max="32767" attributes="0"/>
+                      <EmptySpace pref="131" max="32767" attributes="0"/>
                   </Group>
               </Group>
           </Group>
