@@ -77,6 +77,8 @@ public class GestionBlob {
         byte[] blobAsBytes;
         String sql;
         
+        
+        
         this.con.conectar();
         
         sql = "SELECT imagen FROM usuarios WHERE login = ?";
