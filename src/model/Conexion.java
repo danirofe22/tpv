@@ -27,7 +27,7 @@ public class Conexion {
     /**
      * Establece conexion con la BBDD
      */
-    public void conectar(){
+    public void conectar(){  
         try {
             //indicar el driver a cargar porque este gestor no tiene driver por defefecto
             Class.forName("com.mysql.cj.jdbc.Driver");
