@@ -5,17 +5,23 @@
  */
 package view;
 
+import view.tecladoNum.Teclado;
+
 /**
  *
  * @author drofe
  */
 public class Login extends javax.swing.JFrame {
-
+    Teclado t;
+    String usuario;
     /**
      * Creates new form Login
      */
     public Login() {
         initComponents();
+        this.t = new Teclado();
+        
+        
     }
 
     /**
@@ -30,37 +36,50 @@ public class Login extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         teclado1 = new view.tecladoNum.Teclado();
         jPanel1 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        txtUsuario = new javax.swing.JTextField();
+        txtContraseña = new javax.swing.JTextField();
+        btnInicio = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel3.setBackground(new java.awt.Color(0, 153, 255));
+        jPanel3.setBackground(new java.awt.Color(102, 153, 255));
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 255));
-
-        jTextField1.setFont(new java.awt.Font("Roboto Light", 0, 24)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(153, 153, 153));
-        jTextField1.setText("Usuario");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+        teclado1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                teclado1MouseClicked(evt);
             }
         });
 
-        jTextField2.setFont(new java.awt.Font("Roboto Light", 0, 24)); // NOI18N
-        jTextField2.setForeground(new java.awt.Color(153, 153, 153));
-        jTextField2.setText("Contraseña");
+        jPanel1.setBackground(new java.awt.Color(102, 153, 255));
 
-        jButton1.setBackground(new java.awt.Color(255, 153, 51));
-        jButton1.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
-        jButton1.setText("INICIAR SESION");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        txtUsuario.setFont(new java.awt.Font("Roboto Light", 0, 24)); // NOI18N
+        txtUsuario.setForeground(new java.awt.Color(153, 153, 153));
+        txtUsuario.setText("Usuario");
+        txtUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtUsuarioMouseClicked(evt);
+            }
+        });
+
+        txtContraseña.setFont(new java.awt.Font("Roboto Light", 0, 24)); // NOI18N
+        txtContraseña.setForeground(new java.awt.Color(153, 153, 153));
+        txtContraseña.setText("Contraseña");
+        txtContraseña.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtContraseñaMouseClicked(evt);
+            }
+        });
+
+        btnInicio.setBackground(new java.awt.Color(255, 153, 51));
+        btnInicio.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
+        btnInicio.setText("INICIAR SESION");
+        btnInicio.setBorder(null);
+        btnInicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnInicioActionPerformed(evt);
             }
         });
 
@@ -71,24 +90,24 @@ public class Login extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnInicio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField1)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(btnInicio, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -111,22 +130,41 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(teclado1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(389, 0, -1, -1));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(389, 0, -1, 450));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+
+        jPanel4.setBackground(new java.awt.Color(102, 153, 255));
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 330, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 395, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 390, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(32, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 441));
@@ -134,13 +172,24 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void btnInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+        
+    }//GEN-LAST:event_btnInicioActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void teclado1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_teclado1MouseClicked
+        txtUsuario.setText(t.msg); 
+    }//GEN-LAST:event_teclado1MouseClicked
+
+    private void txtUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtUsuarioMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+        txtUsuario.setText("");
+    }//GEN-LAST:event_txtUsuarioMouseClicked
+
+    private void txtContraseñaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtContraseñaMouseClicked
+        // TODO add your handling code here:
+        txtContraseña.setText("");
+    }//GEN-LAST:event_txtContraseñaMouseClicked
 
     /**
      * @param args the command line arguments
@@ -178,12 +227,13 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    public javax.swing.JButton btnInicio;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JPanel jPanel4;
     private view.tecladoNum.Teclado teclado1;
+    private javax.swing.JTextField txtContraseña;
+    private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }

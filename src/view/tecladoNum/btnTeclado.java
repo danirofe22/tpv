@@ -13,12 +13,13 @@ import javax.swing.JButton;
  */
 public class btnTeclado extends JButton {
 
-    String codigo = "";
+    int valor = 0;
     /**
      * Creates new form btnTeclado
      */
     public btnTeclado() {
         initComponents();
+        
         
     }
     
@@ -54,8 +55,7 @@ public class btnTeclado extends JButton {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_formActionPerformed
-        
-        
+        System.out.println(valor);
     }//GEN-LAST:event_formActionPerformed
 
 

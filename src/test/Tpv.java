@@ -41,7 +41,6 @@ public class Tpv {
         
         blob.setFotoEmpleado(1243, f);
         //cdb.insertarUsuario(user2);
-       
         //cdb.insertarUsuario(user1);
         
    
