@@ -50,7 +50,7 @@ public class GestionBlob {
         con.conectar();
         
         try {
-            sql = "UPDATE usuarios SET imagen = ? WHERE login = ?";
+            sql = "UPDATE usuarios SET imagen = ? WHERE login = ? ;";
             //Abro el archivo en un flujo de fichero
             fis = new FileInputStream(f);
             //Preparamos la sentencia
@@ -58,7 +58,8 @@ public class GestionBlob {
             //Pasamos los parametros a la sentencia
             pstm.setBinaryStream(1, fis,(int) f.length());
             pstm.setInt(2, login);
-            pstm.executeUpdate(sql);
+            System.out.println(pstm.toString());
+            pstm.executeUpdate();
             
             //Desconexion con la base de datos
             con.desconectar();
@@ -77,6 +78,8 @@ public class GestionBlob {
         byte[] blobAsBytes;
         String sql;
         
+        
+        
         this.con.conectar();
         
         sql = "SELECT imagen FROM usuarios WHERE login = ?";
@@ -84,8 +87,9 @@ public class GestionBlob {
             pstm = con.conexion.prepareStatement(sql);
             pstm.setInt(1, login);
             
-            ResultSet rs = pstm.executeQuery(sql);
+            ResultSet rs = pstm.executeQuery();
             while(rs.next()){
+                
                 Blob blob = rs.getBlob("imagen");
                 blobLength = (int) blob.length();
                 blobAsBytes = blob.getBytes(1, blobLength);

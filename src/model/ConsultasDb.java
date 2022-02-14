@@ -32,7 +32,7 @@ public class ConsultasDb {
         this.con.conectar();//Establezco la conexion con la base de datos
         Statement sentencia = this.con.conexion.createStatement();//Creo el nuevo flujo para la sentencia
         //Creo la sentencia sql
-        String sql = String.format("INSERT INTO cafe.usuarios (nombre, apellidos, login, password) values ('%s','%s',%s,%s)", user.getNombre(),user.getApellidos(), user.getLogin(), user.getPassword());
+        String sql = String.format("INSERT INTO cafe.usuarios (nombre, apellidos, login, password,imagen) values ('%s','%s',%s,%s,%s)", user.getNombre(),user.getApellidos(), user.getLogin(), user.getPassword(),user.getImg());
         resultado = sentencia.execute(sql);//Ejecuto la sentencia sql
         this.con.desconectar();//Me desconecto de la base de datos
         return resultado;//Devuelto el resultado de ejecutar la sentencia.

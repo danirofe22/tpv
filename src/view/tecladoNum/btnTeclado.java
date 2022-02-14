@@ -37,11 +37,11 @@ public class btnTeclado extends JButton {
 
         jLabel1.setText("jLabel1");
 
-        setBackground(new java.awt.Color(91, 157, 241));
+        setBackground(new java.awt.Color(204, 255, 51));
         setFont(new java.awt.Font("Roboto Black", 1, 48)); // NOI18N
-        setForeground(new java.awt.Color(239, 242, 250));
+        setForeground(new java.awt.Color(0, 102, 255));
         setText("0");
-        setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(239, 242, 250)));
+        setBorder(null);
         setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         setMaximumSize(new java.awt.Dimension(50, 50));
         setMinimumSize(new java.awt.Dimension(50, 50));
