@@ -31,7 +31,7 @@ public class Tpv {
         ConsultasDb cdb = new ConsultasDb();
         GestionBlob blob = new GestionBlob(); 
         
-        File f = new File("img\\1.jpg");
+        File f = new File("img\\6.jpg");
         
         
         Usuario user = new Usuario("David","Jimenez",0,4321, null);
@@ -39,7 +39,9 @@ public class Tpv {
         Usuario user2 = new Usuario("Alejandr", "Lopez",0,4321, null);
         
         
-        cdb.insertarUsuario(user2);
+        blob.setFotoEmpleado(1243, f);
+        //cdb.insertarUsuario(user2);
+       
         //cdb.insertarUsuario(user1);
         
    
