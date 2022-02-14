@@ -42,6 +42,8 @@ public class Teclado extends JPanel {
         btnTeclado11 = new view.tecladoNum.btnTeclado();
         OK = new view.tecladoNum.btnTeclado();
 
+        setBackground(new java.awt.Color(0, 153, 255));
+
         btnTeclado1.setText("7");
         btnTeclado1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
