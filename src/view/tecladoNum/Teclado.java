@@ -11,14 +11,19 @@ import javax.swing.JPanel;
  *
  * @author drofe
  */
-public class Teclado extends JPanel {
+public class Teclado extends JPanel{
 
-    public String msg = "";
-    
+    private String msg = "";
     
     public Teclado() {
         initComponents();
     }
+    
+    public String getMsg(){
+        return this.msg;
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -188,6 +193,8 @@ public class Teclado extends JPanel {
     private void btnTeclado8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTeclado8ActionPerformed
         // TODO add your handling code here:
         this.msg = this.msg+"8";
+        System.out.println(this.msg);
+        
     }//GEN-LAST:event_btnTeclado8ActionPerformed
 
     private void btnTeclado7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTeclado7ActionPerformed
