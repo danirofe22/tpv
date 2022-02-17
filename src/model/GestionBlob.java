@@ -71,15 +71,14 @@ public class GestionBlob {
             System.out.println("Error al ejecutar la sentencia "+ ex.getMessage());
         }
     }
+    
     public ImageIcon getBlobBd(int login){
         ImageIcon img = null;
         PreparedStatement pstm;
         int blobLength;
         byte[] blobAsBytes;
         String sql;
-        
-        
-        
+   
         this.con.conectar();
         
         sql = "SELECT imagen FROM usuarios WHERE login = ?";

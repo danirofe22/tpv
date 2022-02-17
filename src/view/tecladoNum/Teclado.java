@@ -243,17 +243,17 @@ public class Teclado extends JPanel{
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private view.tecladoNum.btnTeclado btnBorrar;
-    private view.tecladoNum.btnTeclado btnOk;
-    private view.tecladoNum.btnTeclado btnTeclado00;
-    private view.tecladoNum.btnTeclado btnTeclado1;
-    private view.tecladoNum.btnTeclado btnTeclado2;
-    private view.tecladoNum.btnTeclado btnTeclado3;
-    private view.tecladoNum.btnTeclado btnTeclado4;
-    private view.tecladoNum.btnTeclado btnTeclado5;
-    private view.tecladoNum.btnTeclado btnTeclado6;
-    private view.tecladoNum.btnTeclado btnTeclado7;
-    private view.tecladoNum.btnTeclado btnTeclado8;
-    private view.tecladoNum.btnTeclado btnTeclado9;
+    public static view.tecladoNum.btnTeclado btnBorrar;
+    public static view.tecladoNum.btnTeclado btnOk;
+    public static view.tecladoNum.btnTeclado btnTeclado00;
+    public static view.tecladoNum.btnTeclado btnTeclado1;
+    public static view.tecladoNum.btnTeclado btnTeclado2;
+    public static view.tecladoNum.btnTeclado btnTeclado3;
+    public static view.tecladoNum.btnTeclado btnTeclado4;
+    public static view.tecladoNum.btnTeclado btnTeclado5;
+    public static view.tecladoNum.btnTeclado btnTeclado6;
+    public static view.tecladoNum.btnTeclado btnTeclado7;
+    public static view.tecladoNum.btnTeclado btnTeclado8;
+    public static view.tecladoNum.btnTeclado btnTeclado9;
     // End of variables declaration//GEN-END:variables
 }

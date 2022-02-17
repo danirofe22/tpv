@@ -16,9 +16,11 @@ import java.util.ArrayList;
  */
 public class ConsultasDb {
     private Conexion con;
+    private GestionBlob gb;
 
     public ConsultasDb() {
         this.con = new Conexion();
+        this.gb = new GestionBlob();
     }
     
     /**
@@ -89,6 +91,22 @@ public class ConsultasDb {
             int i=1;
             listLogin.add(rs.getInt(i));
             i++;
+        }
+        return listLogin;
+    }
+    
+    public ArrayList<Usuario> listarUsuariosPOO() throws SQLException{
+        ArrayList<Usuario> listLogin = new ArrayList<Usuario>();
+        
+        
+        ResultSet rs;
+        this.con.conectar();
+        Statement sentencia = this.con.conexion.createStatement();
+        String sql = "SELECT * FROM cafe.usuarios";
+        sentencia.execute(sql);
+        rs = sentencia.getResultSet();
+        while(rs.next()){
+            Usuario user = new Usuario(rs.getString(1), rs.getString(2), rs.getInt(3), rs.getInt(4), gb.getBlobBd(3));
         }
         return listLogin;
     }

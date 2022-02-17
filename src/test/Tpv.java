@@ -38,8 +38,8 @@ public class Tpv {
         Usuario user1 = new Usuario("Jose","Perez",0,4321, null);
         Usuario user2 = new Usuario("Alejandr", "Lopez",0,4321, null);
         
-        
-        blob.setFotoEmpleado(1243, f);
+        System.out.println(cdb.listarUsuarios());
+        //blob.setFotoEmpleado(1243, f);
         //cdb.insertarUsuario(user2);
         //cdb.insertarUsuario(user1);
         
