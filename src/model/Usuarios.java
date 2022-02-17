@@ -21,6 +21,10 @@ public class Usuarios {
     public Usuarios(ArrayList<Usuario> listadoUsuarios) {
         this.listadoUsuarios = listadoUsuarios;
     }
+    
+    public Usuario get(int pos){
+        return this.listadoUsuarios.get(pos);
+    }
 
     public ArrayList<Usuario> getListadoUsuarios() {
         return listadoUsuarios;
@@ -29,6 +33,7 @@ public class Usuarios {
     public void setListadoUsuarios(ArrayList<Usuario> listadoUsuarios) {
         this.listadoUsuarios = listadoUsuarios;
     }
+    
     
     public Usuario buscarUsuario(int login){
         Usuario user = null;

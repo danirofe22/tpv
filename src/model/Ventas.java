@@ -22,6 +22,10 @@ public class Ventas {
         this.listadoVentas = listadoVentas;
     }
 
+    public Venta get(int pos){
+        return this.listadoVentas.get(pos);
+    }
+    
     public ArrayList<Venta> getListadoVentas() {
         return listadoVentas;
     }

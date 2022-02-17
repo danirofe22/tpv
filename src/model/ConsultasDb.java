@@ -107,6 +107,7 @@ public class ConsultasDb {
         rs = sentencia.getResultSet();
         while(rs.next()){
             Usuario user = new Usuario(rs.getString(1), rs.getString(2), rs.getInt(3), rs.getInt(4), gb.getBlobBd(3));
+            listLogin.add(user);
         }
         return listLogin;
     }
@@ -178,17 +179,17 @@ public class ConsultasDb {
         boolean resultado = false;
         this.con.conectar();
         Statement sentencia  = this.con.conexion.createStatement();
-        String sql  = String.format("DELETE FROM cafe.ventas WHERE numeroTicket = %s", venta.getNumeroTicket());
+        String sql  = String.format("DELETE FROM cafe.ventas WHERE idVenta = %s", venta.getIdVenta());
         resultado = sentencia.execute(sql);
         this.con.desconectar();
         return resultado;
     }
     
-    public void modificarProducto(Venta venta) throws SQLException{
+    public void modificarVenta(Venta venta) throws SQLException{
         boolean resultado = false;
         this.con.conectar();
         Statement sentencia  = this.con.conexion.createStatement();
-        String sql  = String.format("UPDATE cafe.ventas SET idProducto =(%s), numeroTicket = (%s), cantidad = (%s) WHERE numeroTicket = (%s)", venta.getIdProducto(), venta.getNumeroTicket(), venta.getCantidad(), venta.getNumeroTicket());
+        String sql  = String.format("UPDATE cafe.ventas SET idProducto =(%s), numeroTicket = (%s), cantidad = (%s) WHERE idVenta = (%s)", venta.getIdProducto(), venta.getNumeroTicket(), venta.getCantidad(), venta.getIdVenta());
         resultado = sentencia.execute(sql);
         this.con.desconectar();
     }
@@ -203,7 +204,7 @@ public class ConsultasDb {
         sentencia.execute(sql);
         rs = sentencia.getResultSet();
         while(rs.next()){
-            listVenta.add(new Venta(rs.getInt(1),rs.getInt(2), rs.getInt(3)));
+            listVenta.add(new Venta(rs.getInt(1),rs.getInt(2), rs.getInt(3), rs.getInt(4)));
         }
         return listVenta;
     }

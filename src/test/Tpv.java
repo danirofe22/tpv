@@ -38,7 +38,11 @@ public class Tpv {
         Usuario user1 = new Usuario("Jose","Perez",0,4321, null);
         Usuario user2 = new Usuario("Alejandr", "Lopez",0,4321, null);
         
-        System.out.println(cdb.listarUsuarios());
+        Venta venta4 = new Venta(3, 0, 1, 0);
+        
+//        cdb.insertarVenta(venta4);
+//        
+//        System.out.println(cdb.listarUsuarios());
         //blob.setFotoEmpleado(1243, f);
         //cdb.insertarUsuario(user2);
         //cdb.insertarUsuario(user1);
