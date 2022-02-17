@@ -6,6 +6,7 @@
 package view.tecladoNum;
 
 import javax.swing.JButton;
+import view.Login;
 
 /**
  *
@@ -13,12 +14,12 @@ import javax.swing.JButton;
  */
 public class btnTeclado extends JButton {
 
-    String codigo = "";
     /**
      * Creates new form btnTeclado
      */
     public btnTeclado() {
         initComponents();
+        
         
     }
     
@@ -54,7 +55,6 @@ public class btnTeclado extends JButton {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_formActionPerformed
-        
         
     }//GEN-LAST:event_formActionPerformed
 
