@@ -106,7 +106,8 @@ public class ConsultasDb {
         sentencia.execute(sql);
         rs = sentencia.getResultSet();
         while(rs.next()){
-            Usuario user = new Usuario(rs.getString(1), rs.getString(2), rs.getInt(3), rs.getInt(4), gb.getBlobBd(3));
+            Usuario user = new Usuario(rs.getString(1), rs.getString(2), rs.getInt(3), rs.getInt(4), gb.getFotoEmpleado(3));
+            listLogin.add(user);
         }
         return listLogin;
     }
@@ -116,7 +117,7 @@ public class ConsultasDb {
         this.con.conectar();//Establezco la conexion con la base de datos
         Statement sentencia = this.con.conexion.createStatement();//Creo el nuevo flujo para la sentencia
         //Creo la sentencia sql
-        String sql = String.format("INSERT INTO cafe.productos (nombre, pvp, stock, idProducto) values ('%s',%s,%s,%s)", prod.getNombre(),prod.getPvp(), prod.getStock(), prod.getIdProducto());
+        String sql = String.format("INSERT INTO cafe.productos (nombre, pvp, stock, idProducto, tipo, imagen) values ('%s',%s,%s,%s,'%s',null)", prod.getNombre(),prod.getPvp(), prod.getStock(), prod.getIdProducto(), prod.getTipo());
         resultado = sentencia.execute(sql);//Ejecuto la sentencia sql
         this.con.desconectar();//Me desconecto de la base de datos
         return resultado;//Devuelto el resultado de ejecutar la sentencia.
@@ -136,7 +137,7 @@ public class ConsultasDb {
         boolean resultado = false;
         this.con.conectar();
         Statement sentencia  = this.con.conexion.createStatement();
-        String sql  = String.format("UPDATE cafe.productos SET nombre =('%s'), pvp = (%s), stock = (%s), idProducto = (%s) WHERE idProducto = (%s)", prod.getNombre(), prod.getPvp(), prod.getStock(), prod.getIdProducto(), prod.getIdProducto());
+        String sql  = String.format("UPDATE cafe.productos SET nombre =('%s'), pvp = (%s), stock = (%s), idProducto = (%s), tipo = ('%s') WHERE idProducto = (%s)", prod.getNombre(), prod.getPvp(), prod.getStock(), prod.getIdProducto(), prod.getIdProducto(), prod.getTipo());
         resultado = sentencia.execute(sql);
         this.con.desconectar();
     }
@@ -151,7 +152,7 @@ public class ConsultasDb {
         sentencia.execute(sql);
         rs = sentencia.getResultSet();
         while(rs.next()){
-            listProducto.add(new Producto(rs.getString(1),rs.getFloat(2), rs.getInt(3),rs.getInt(4)));
+            listProducto.add(new Producto(rs.getString(1),rs.getFloat(2), rs.getInt(3),rs.getInt(4),rs.getString(5)));
         }
         return listProducto;
     }
@@ -178,17 +179,17 @@ public class ConsultasDb {
         boolean resultado = false;
         this.con.conectar();
         Statement sentencia  = this.con.conexion.createStatement();
-        String sql  = String.format("DELETE FROM cafe.ventas WHERE numeroTicket = %s", venta.getNumeroTicket());
+        String sql  = String.format("DELETE FROM cafe.ventas WHERE idVenta = %s", venta.getIdVenta());
         resultado = sentencia.execute(sql);
         this.con.desconectar();
         return resultado;
     }
     
-    public void modificarProducto(Venta venta) throws SQLException{
+    public void modificarVenta(Venta venta) throws SQLException{
         boolean resultado = false;
         this.con.conectar();
         Statement sentencia  = this.con.conexion.createStatement();
-        String sql  = String.format("UPDATE cafe.ventas SET idProducto =(%s), numeroTicket = (%s), cantidad = (%s) WHERE numeroTicket = (%s)", venta.getIdProducto(), venta.getNumeroTicket(), venta.getCantidad(), venta.getNumeroTicket());
+        String sql  = String.format("UPDATE cafe.ventas SET idProducto =(%s), numeroTicket = (%s), cantidad = (%s) WHERE idVenta = (%s)", venta.getIdProducto(), venta.getNumeroTicket(), venta.getCantidad(), venta.getIdVenta());
         resultado = sentencia.execute(sql);
         this.con.desconectar();
     }
@@ -203,7 +204,7 @@ public class ConsultasDb {
         sentencia.execute(sql);
         rs = sentencia.getResultSet();
         while(rs.next()){
-            listVenta.add(new Venta(rs.getInt(1),rs.getInt(2), rs.getInt(3)));
+            listVenta.add(new Venta(rs.getInt(1),rs.getInt(2), rs.getInt(3), rs.getInt(4)));
         }
         return listVenta;
     }

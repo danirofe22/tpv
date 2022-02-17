@@ -37,12 +37,12 @@ public class Login extends javax.swing.JFrame {
     
     private void cargarUsuarios() throws SQLException{
         usuarios = cbd.listarUsuarios();
-        this.btnUsuario1.setIcon(Gb.getBlobBd(usuarios.get(0)));
-        this.btnUsuario2.setIcon(Gb.getBlobBd(usuarios.get(1)));
-        this.btnUsuario3.setIcon(Gb.getBlobBd(usuarios.get(2)));
-        this.btnUsuario4.setIcon(Gb.getBlobBd(usuarios.get(3)));
-        this.btnUsuario5.setIcon(Gb.getBlobBd(usuarios.get(4)));
-        this.btnUsuario6.setIcon(Gb.getBlobBd(usuarios.get(5))); 
+        this.btnUsuario1.setIcon(Gb.getFotoEmpleado(usuarios.get(0)));
+        this.btnUsuario2.setIcon(Gb.getFotoEmpleado(usuarios.get(1)));
+        this.btnUsuario3.setIcon(Gb.getFotoEmpleado(usuarios.get(2)));
+        this.btnUsuario4.setIcon(Gb.getFotoEmpleado(usuarios.get(3)));
+        this.btnUsuario5.setIcon(Gb.getFotoEmpleado(usuarios.get(4)));
+        this.btnUsuario6.setIcon(Gb.getFotoEmpleado(usuarios.get(5))); 
     }
 
 
