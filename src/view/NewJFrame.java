@@ -6,6 +6,7 @@
 package view;
 
 import javax.swing.DefaultListModel;
+import model.ConsultasDb;
 
 /**
  *
@@ -15,9 +16,17 @@ public class NewJFrame extends javax.swing.JFrame {
 
     DefaultListModel modeloListaUsuario;
     
+    ConsultasDb cbd;
+    
     public NewJFrame() {
         this.modeloListaUsuario = new DefaultListModel();
         initComponents();
+        
+        this.cbd =new ConsultasDb();
+        
+    }
+    
+    private void cargarUsuarios(){
         
     }
 
@@ -147,6 +156,11 @@ public class NewJFrame extends javax.swing.JFrame {
         btnEliminarProductos.setForeground(new java.awt.Color(255, 255, 255));
         btnEliminarProductos.setText("Eliminar");
         btnEliminarProductos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 51, 51), 4));
+        btnEliminarProductos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarProductosActionPerformed(evt);
+            }
+        });
 
         btnNuevoProductos.setBackground(new java.awt.Color(255, 153, 0));
         btnNuevoProductos.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
@@ -164,6 +178,11 @@ public class NewJFrame extends javax.swing.JFrame {
         btnGuardarProductos.setForeground(new java.awt.Color(255, 255, 255));
         btnGuardarProductos.setText("Guardar");
         btnGuardarProductos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 51, 51), 4));
+        btnGuardarProductos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarProductosActionPerformed(evt);
+            }
+        });
 
         lblIdProductoProducto.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         lblIdProductoProducto.setForeground(new java.awt.Color(255, 255, 255));
@@ -322,6 +341,11 @@ public class NewJFrame extends javax.swing.JFrame {
         btnEliminarVentas.setForeground(new java.awt.Color(255, 255, 255));
         btnEliminarVentas.setText("Eliminar");
         btnEliminarVentas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 255, 51), 4));
+        btnEliminarVentas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarVentasActionPerformed(evt);
+            }
+        });
 
         btnNuevoVentas.setBackground(new java.awt.Color(255, 153, 0));
         btnNuevoVentas.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
@@ -339,6 +363,11 @@ public class NewJFrame extends javax.swing.JFrame {
         btnGuardarVentas.setForeground(new java.awt.Color(255, 255, 255));
         btnGuardarVentas.setText("Guardar");
         btnGuardarVentas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 255, 51), 4));
+        btnGuardarVentas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarVentasActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelVentasLayout = new javax.swing.GroupLayout(panelVentas);
         panelVentas.setLayout(panelVentasLayout);
@@ -532,6 +561,11 @@ public class NewJFrame extends javax.swing.JFrame {
         btnEliminarUsuario.setForeground(new java.awt.Color(255, 255, 255));
         btnEliminarUsuario.setText("Eliminar");
         btnEliminarUsuario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 102, 255), 4));
+        btnEliminarUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarUsuarioActionPerformed(evt);
+            }
+        });
 
         btnNuevoUsuario.setBackground(new java.awt.Color(255, 153, 0));
         btnNuevoUsuario.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
@@ -549,6 +583,11 @@ public class NewJFrame extends javax.swing.JFrame {
         btnGuardarUsuario.setForeground(new java.awt.Color(255, 255, 255));
         btnGuardarUsuario.setText("Guardar");
         btnGuardarUsuario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 102, 255), 4));
+        btnGuardarUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarUsuarioActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelUsuariosLayout = new javax.swing.GroupLayout(panelUsuarios);
         panelUsuarios.setLayout(panelUsuariosLayout);
@@ -635,6 +674,8 @@ public class NewJFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //BOTONES NUEVO
+    
     private void btnNuevoUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoUsuarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnNuevoUsuarioActionPerformed
@@ -646,6 +687,34 @@ public class NewJFrame extends javax.swing.JFrame {
     private void btnNuevoProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoProductosActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnNuevoProductosActionPerformed
+
+    //BOTONES GUARDAR
+    
+    private void btnGuardarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGuardarUsuarioActionPerformed
+
+    private void btnGuardarVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarVentasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGuardarVentasActionPerformed
+
+    private void btnGuardarProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarProductosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGuardarProductosActionPerformed
+
+    //bOTONES ELIMINAR
+    
+    private void btnEliminarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEliminarUsuarioActionPerformed
+
+    private void btnEliminarVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarVentasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEliminarVentasActionPerformed
+
+    private void btnEliminarProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarProductosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEliminarProductosActionPerformed
 
     /**
      * @param args the command line arguments
