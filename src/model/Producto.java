@@ -14,21 +14,24 @@ public class Producto {
     private float pvp;
     private int stock;
     private int idProducto;
+    private String tipo;
 
     public Producto() {
         this.nombre = "";
         this.pvp = 0.0f;
         this.stock = 0;
         this.idProducto = 0;
+        this.tipo = "";
     }
     
     
 
-    public Producto(String nombre, float pvp, int stock, int idProducto) {
+    public Producto(String nombre, float pvp, int stock, int idProducto, String tipo) {
         this.nombre = nombre;
         this.pvp = pvp;
         this.stock = stock;
         this.idProducto = idProducto;
+        this.tipo = tipo;
     }
 
     public String getNombre(){
@@ -47,6 +50,10 @@ public class Producto {
         return idProducto;
     }
 
+    public String getTipo() {
+        return tipo;
+    }
+    
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -63,8 +70,15 @@ public class Producto {
         this.idProducto = idProducto;
     }
 
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
     @Override
     public String toString() {
-        return "Producto{" + "nombre=" + nombre + ", apellidos=" + stock + ", pvp=" + pvp + ", idProducto=" + idProducto + '}';
+        return "Producto{" + "nombre=" + nombre + ", pvp=" + pvp + ", stock=" + stock + ", idProducto=" + idProducto + ", tipo=" + tipo + '}';
     }
+    
+
+    
 }

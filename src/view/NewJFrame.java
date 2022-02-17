@@ -94,6 +94,7 @@ public class NewJFrame extends javax.swing.JFrame {
         this.txtNombreProducto.setText("");
         this.txtPvpProducto.setText("");
         this.txtStockProductos.setText("");
+        this.txtTipoProductos.setText("");
         
     }
 
@@ -121,6 +122,8 @@ public class NewJFrame extends javax.swing.JFrame {
         btnGuardarProductos = new javax.swing.JButton();
         lblIdProductoProducto = new javax.swing.JLabel();
         txtIdProductoProducto = new javax.swing.JTextField();
+        lblTipoProducto = new javax.swing.JLabel();
+        txtTipoProductos = new javax.swing.JTextField();
         jPanel6 = new javax.swing.JPanel();
         panelListaProductos = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -245,6 +248,17 @@ public class NewJFrame extends javax.swing.JFrame {
 
         txtIdProductoProducto.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         txtIdProductoProducto.setEnabled(false);
+        txtIdProductoProducto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIdProductoProductoActionPerformed(evt);
+            }
+        });
+
+        lblTipoProducto.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        lblTipoProducto.setForeground(new java.awt.Color(255, 255, 255));
+        lblTipoProducto.setText("Tipo:");
+
+        txtTipoProductos.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
 
         javax.swing.GroupLayout panelProductosLayout = new javax.swing.GroupLayout(panelProductos);
         panelProductos.setLayout(panelProductosLayout);
@@ -254,14 +268,20 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addGap(23, 23, 23)
                 .addGroup(panelProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelProductosLayout.createSequentialGroup()
-                        .addComponent(btnNuevoProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnGuardarProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnEliminarProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(panelProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblTipoProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(panelProductosLayout.createSequentialGroup()
+                                .addComponent(btnNuevoProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnGuardarProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnEliminarProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelProductosLayout.createSequentialGroup()
                         .addGroup(panelProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(panelProductosLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(txtTipoProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(panelProductosLayout.createSequentialGroup()
                                 .addComponent(lblIdProductoProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -300,7 +320,11 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addGroup(panelProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblIdProductoProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtIdProductoProducto))
-                .addGap(230, 230, 230)
+                .addGap(18, 18, 18)
+                .addGroup(panelProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblTipoProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtTipoProductos))
+                .addGap(178, 178, 178)
                 .addGroup(panelProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnEliminarProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnGuardarProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -802,10 +826,10 @@ public class NewJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             if(txtIdProductoProducto.getText().equals("")){
-                    this.cbd.insertarProducto(new Producto(this.txtNombreProducto.getText(),Float.parseFloat(this.txtPvpProducto.getText()),Integer.parseInt(this.txtStockProductos.getText()),0));
+                    this.cbd.insertarProducto(new Producto(this.txtNombreProducto.getText(),Float.parseFloat(this.txtPvpProducto.getText()),Integer.parseInt(this.txtStockProductos.getText()),0, this.txtTipoProductos.getText()));
                     this.cargarProductos(); 
             }else{
-                    this.cbd.modificarProducto(new Producto(this.txtNombreProducto.getText(),Float.parseFloat(this.txtPvpProducto.getText()),Integer.parseInt(this.txtStockProductos.getText()),0));
+                    this.cbd.modificarProducto(new Producto(this.txtNombreProducto.getText(),Float.parseFloat(this.txtPvpProducto.getText()),Integer.parseInt(this.txtStockProductos.getText()),Integer.parseInt(this.txtIdProductoProducto.getText()), this.txtTipoProductos.getText()));
                     this.cargarProductos();
             }
         } catch (SQLException ex) {
@@ -887,8 +911,13 @@ public class NewJFrame extends javax.swing.JFrame {
             this.txtPvpProducto.setText(String.valueOf(prod.getPvp()));
             this.txtStockProductos.setText(String.valueOf(prod.getStock()));
             this.txtIdProductoProducto.setText(String.valueOf(prod.getIdProducto()));
+            this.txtTipoProductos.setText(prod.getTipo());
         }
     }//GEN-LAST:event_listProductosValueChanged
+
+    private void txtIdProductoProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdProductoProductoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIdProductoProductoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -962,6 +991,7 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel lblPasswordUsuario;
     private javax.swing.JLabel lblPvpProducto;
     private javax.swing.JLabel lblStockProducto;
+    private javax.swing.JLabel lblTipoProducto;
     private javax.swing.JLabel lblUsuario;
     private javax.swing.JLabel lblVentas;
     private javax.swing.JLabel lblVentas1;
@@ -986,5 +1016,6 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JTextField txtPasswordUsuario;
     private javax.swing.JTextField txtPvpProducto;
     private javax.swing.JTextField txtStockProductos;
+    private javax.swing.JTextField txtTipoProductos;
     // End of variables declaration//GEN-END:variables
 }

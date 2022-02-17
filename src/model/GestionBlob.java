@@ -72,7 +72,7 @@ public class GestionBlob {
         }
     }
     
-    public ImageIcon getBlobBd(int login){
+    public ImageIcon getFotoEmpleado(int login){
         ImageIcon img = null;
         PreparedStatement pstm;
         int blobLength;
@@ -106,6 +106,78 @@ public class GestionBlob {
         }
         return img;
     }
+    
+    
+    
+    public void setFotoProducto(int idProducto, File f){
+       
+        PreparedStatement pstm;
+        FileInputStream fis;
+        String sql;
+
+        //Conexion con la base de datos
+        con.conectar();
+        
+        try {
+            sql = "UPDATE productos SET imagen = ? WHERE idProducto = ? ;";
+            //Abro el archivo en un flujo de fichero
+            fis = new FileInputStream(f);
+            //Preparamos la sentencia
+            pstm = con.conexion.prepareStatement(sql);
+            //Pasamos los parametros a la sentencia
+            pstm.setBinaryStream(1, fis,(int) f.length());
+            pstm.setInt(2, idProducto);
+            System.out.println(pstm.toString());
+            pstm.executeUpdate();
+            
+            //Desconexion con la base de datos
+            con.desconectar();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(GestionBlob.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Error al cargar la imagen para subir el archivo "+ ex.getMessage());
+        } catch (SQLException ex) {
+            Logger.getLogger(GestionBlob.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Error al ejecutar la sentencia "+ ex.getMessage());
+        }
+    }
+    
+    
+    
+    public ImageIcon getFotoProducto(int idProducto){
+        ImageIcon img = null;
+        PreparedStatement pstm;
+        int blobLength;
+        byte[] blobAsBytes;
+        String sql;
+   
+        this.con.conectar();
+        
+        sql = "SELECT imagen FROM usuarios WHERE idProducto = ?";
+        try {
+            pstm = con.conexion.prepareStatement(sql);
+            pstm.setInt(1, idProducto);
+            
+            ResultSet rs = pstm.executeQuery();
+            while(rs.next()){
+                
+                Blob blob = rs.getBlob("imagen");
+                blobLength = (int) blob.length();
+                blobAsBytes = blob.getBytes(1, blobLength);
+                final BufferedImage bfImg = ImageIO.read(new ByteArrayInputStream(blobAsBytes));
+                img = new ImageIcon(bfImg);
+                
+            }
+        
+        } catch (SQLException ex) {
+            Logger.getLogger(GestionBlob.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Error al ejecutar la sentencia sql que devuelve una imagen del usuario "+ex.getMessage());
+        } catch (IOException ex) {
+            Logger.getLogger(GestionBlob.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Error al ejecutar flujos de entrada y salida al pedir una imagen a la base de datos para el usuario "+ ex.getMessage());
+        }
+        return img;
+    }
+    
 }
 
 
