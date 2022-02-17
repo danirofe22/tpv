@@ -12,27 +12,31 @@ import java.util.ArrayList;
  * @author drofe
  */
 public class Productos {
-    private ArrayList<Producto> listadoVentas;
+    private ArrayList<Producto> listadoProductos;
 
     public Productos() {
     }
 
-    public Productos(ArrayList<Producto> listadoVentas) {
-        this.listadoVentas = listadoVentas;
+    public Productos(ArrayList<Producto> listadoProductos) {
+        this.listadoProductos = listadoProductos;
     }
 
-    public ArrayList<Producto> getListadoVentas() {
-        return listadoVentas;
+    public ArrayList<Producto> getListadoProductos() {
+        return listadoProductos;
+    }
+    
+    public Producto get(int pos){
+        return this.listadoProductos.get(pos);
     }
 
-    public void setListadoVentas(ArrayList<Producto> listadoVentas) {
-        this.listadoVentas = listadoVentas;
+    public void setListadoVentas(ArrayList<Producto> listadoProductos) {
+        this.listadoProductos = listadoProductos;
     }
     
     public Producto buscarProducto(int idProducto){
         Producto prod = null;
-        for (int i = 0; i < this.listadoVentas.size(); i++) {
-            if(listadoVentas.get(i).getIdProducto()==idProducto){
+        for (int i = 0; i < this.listadoProductos.size(); i++) {
+            if(listadoProductos.get(i).getIdProducto()==idProducto){
                 prod = this.buscarProducto(i);
             }
         }
@@ -41,7 +45,7 @@ public class Productos {
 
     @Override
     public String toString() {
-        return "Productos{" + "listadoVentas=" + listadoVentas + '}';
+        return "Productos{" + "listadoProductos=" + listadoProductos + '}';
     }
     
     

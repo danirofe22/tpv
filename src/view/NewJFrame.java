@@ -10,6 +10,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import model.ConsultasDb;
+import model.Producto;
+import model.Productos;
 import model.Usuarios;
 import model.Usuario;
 import model.Venta;
@@ -21,24 +23,29 @@ import model.Ventas;
  */
 public class NewJFrame extends javax.swing.JFrame {
 
+    
     DefaultListModel modeloListaUsuario;
     Usuarios listadoUsuarios;
     
     DefaultListModel modeloListaVenta;
     Ventas listadoVentas;
     
+    DefaultListModel modeloListaProductos;
+    Productos listadoProductos;
+    
     ConsultasDb cbd;
     
     public NewJFrame() throws SQLException {
         this.modeloListaUsuario = new DefaultListModel();
         this.modeloListaVenta = new DefaultListModel();
+        this.modeloListaProductos = new DefaultListModel();
         initComponents();
         
         this.cbd =new ConsultasDb();
         
         this.cargarUsuarios();
         this.cargarVentas();
-        
+        this.cargarProductos();
     }
     
     private void cargarUsuarios() throws SQLException{
@@ -51,11 +58,20 @@ public class NewJFrame extends javax.swing.JFrame {
     
     private void cargarVentas() throws SQLException{
         this.listadoVentas = new Ventas(cbd.listarVentas());
-        System.out.println(listadoVentas.toString());
         this.modeloListaVenta.clear();
         for (int i = 0; i < this.listadoVentas.getListadoVentas().size(); i++) {
             this.modeloListaVenta.addElement(this.listadoVentas.getListadoVentas().get(i).getIdProducto());
         } 
+    }
+    
+    private void cargarProductos() throws SQLException{
+        this.listadoProductos = new Productos(cbd.listarProductos());
+        this.modeloListaProductos.clear();
+        for (int i = 0; i < this.listadoProductos.getListadoProductos().size(); i++) {
+            this.modeloListaProductos.addElement(this.listadoProductos.getListadoProductos().get(i).getNombre());
+            
+        }
+        
     }
     
     private void limpiarCamposUsuario(){
@@ -72,6 +88,14 @@ public class NewJFrame extends javax.swing.JFrame {
         this.txtNumeroTicketVenta.setText("");
         this.txtIdVentaVenta1.setText("");
     }
+    
+    private void limpiarCamposProductos(){
+        this.txtIdProductoProducto.setText("");
+        this.txtNombreProducto.setText("");
+        this.txtPvpProducto.setText("");
+        this.txtStockProductos.setText("");
+        
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -84,7 +108,6 @@ public class NewJFrame extends javax.swing.JFrame {
 
         jPanel3 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         panelProductos = new javax.swing.JPanel();
         lblNombreProducto = new javax.swing.JLabel();
@@ -161,19 +184,6 @@ public class NewJFrame extends javax.swing.JFrame {
         jTabbedPane1.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
         jTabbedPane1.setOpaque(true);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 740, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 570, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("Inicio                        ", jPanel1);
-
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panelProductos.setBackground(new java.awt.Color(255, 204, 51));
@@ -234,6 +244,7 @@ public class NewJFrame extends javax.swing.JFrame {
         lblIdProductoProducto.setText("Id producto:");
 
         txtIdProductoProducto.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        txtIdProductoProducto.setEnabled(false);
 
         javax.swing.GroupLayout panelProductosLayout = new javax.swing.GroupLayout(panelProductos);
         panelProductos.setLayout(panelProductosLayout);
@@ -304,10 +315,11 @@ public class NewJFrame extends javax.swing.JFrame {
         panelListaProductos.setBackground(new java.awt.Color(255, 204, 51));
 
         listProductos.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        listProductos.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
+        listProductos.setModel(modeloListaProductos);
+        listProductos.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                listProductosValueChanged(evt);
+            }
         });
         jScrollPane3.setViewportView(listProductos);
 
@@ -741,16 +753,17 @@ public class NewJFrame extends javax.swing.JFrame {
     
     private void btnNuevoUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoUsuarioActionPerformed
         // TODO add your handling code here:
-        limpiarCamposUsuario();
+        this.limpiarCamposUsuario();
     }//GEN-LAST:event_btnNuevoUsuarioActionPerformed
 
     private void btnNuevoVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoVentasActionPerformed
         // TODO add your handling code here:
-        limpiarCamposVentas();
+        this.limpiarCamposVentas();
     }//GEN-LAST:event_btnNuevoVentasActionPerformed
 
     private void btnNuevoProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoProductosActionPerformed
         // TODO add your handling code here:
+        this.limpiarCamposProductos();
     }//GEN-LAST:event_btnNuevoProductosActionPerformed
 
     //BOTONES GUARDAR
@@ -778,6 +791,7 @@ public class NewJFrame extends javax.swing.JFrame {
                     this.cargarVentas(); 
             }else{
                     this.cbd.modificarVenta(new Venta(Integer.parseInt(this.txtIdProductoVenta.getText()),Integer.parseInt(this.txtNumeroTicketVenta.getText()),Integer.parseInt(this.txtCantidadVenta.getText()),0));
+                    this.cargarVentas(); 
             }
         } catch (SQLException ex) {
                 Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
@@ -786,6 +800,17 @@ public class NewJFrame extends javax.swing.JFrame {
 
     private void btnGuardarProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarProductosActionPerformed
         // TODO add your handling code here:
+        try {
+            if(txtIdProductoProducto.getText().equals("")){
+                    this.cbd.insertarProducto(new Producto(this.txtNombreProducto.getText(),Float.parseFloat(this.txtPvpProducto.getText()),Integer.parseInt(this.txtStockProductos.getText()),0));
+                    this.cargarProductos(); 
+            }else{
+                    this.cbd.modificarProducto(new Producto(this.txtNombreProducto.getText(),Float.parseFloat(this.txtPvpProducto.getText()),Integer.parseInt(this.txtStockProductos.getText()),0));
+                    this.cargarProductos();
+            }
+        } catch (SQLException ex) {
+                Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+          }
     }//GEN-LAST:event_btnGuardarProductosActionPerformed
 
     //bOTONES ELIMINAR
@@ -818,6 +843,14 @@ public class NewJFrame extends javax.swing.JFrame {
 
     private void btnEliminarProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarProductosActionPerformed
         // TODO add your handling code here:
+        if(listProductos.getSelectedIndex()>=0){
+            try {
+                this.cbd.eliminarProducto(this.listadoProductos.get(this.listProductos.getSelectedIndex()));
+                cargarProductos();
+            } catch (SQLException ex) {
+                Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
         
     }//GEN-LAST:event_btnEliminarProductosActionPerformed
 
@@ -844,6 +877,18 @@ public class NewJFrame extends javax.swing.JFrame {
             this.txtIdVentaVenta1.setText(String.valueOf(venta.getIdVenta()));
         }
     }//GEN-LAST:event_listVentasValueChanged
+
+    private void listProductosValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listProductosValueChanged
+        // TODO add your handling code here:
+        if(listProductos.getSelectedIndex()>=0){
+            Producto prod = new Producto();
+            prod = this.listadoProductos.get(listProductos.getSelectedIndex());
+            this.txtNombreProducto.setText(prod.getNombre());
+            this.txtPvpProducto.setText(String.valueOf(prod.getPvp()));
+            this.txtStockProductos.setText(String.valueOf(prod.getStock()));
+            this.txtIdProductoProducto.setText(String.valueOf(prod.getIdProducto()));
+        }
+    }//GEN-LAST:event_listProductosValueChanged
 
     /**
      * @param args the command line arguments
@@ -895,7 +940,6 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnNuevoProductos;
     private javax.swing.JButton btnNuevoUsuario;
     private javax.swing.JButton btnNuevoVentas;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;

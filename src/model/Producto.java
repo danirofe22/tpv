@@ -15,6 +15,15 @@ public class Producto {
     private int stock;
     private int idProducto;
 
+    public Producto() {
+        this.nombre = "";
+        this.pvp = 0.0f;
+        this.stock = 0;
+        this.idProducto = 0;
+    }
+    
+    
+
     public Producto(String nombre, float pvp, int stock, int idProducto) {
         this.nombre = nombre;
         this.pvp = pvp;
