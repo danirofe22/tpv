@@ -6,7 +6,10 @@
 package view;
 
 import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+import model.ConsultasDb;
 import model.Producto;
+import model.Productos;
 
 /**
  *
@@ -15,16 +18,35 @@ import model.Producto;
 public class InterfazUsuario extends javax.swing.JFrame {
     private ArrayList<Producto> listadoCafe;
     private ArrayList<Producto> listadoRefrescos;
+    private DefaultTableModel modeloTablaTicket;
+    private ConsultasDb cbd;
     /**
      * Creates new form InterfazUsuario
      */
     public InterfazUsuario() {
+        modeloTablaTicket = new DefaultTableModel();
         initComponents();
     }
     
-    private cargarProductos(){
-        
-    }
+//    void limpiartabla() {
+//
+//        int filas = modeloTablaTicket.getRowCount() - 1;
+//        for (int i = filas; i >= 0; i--) {
+//            modeloTablaTicket.removeRow(model.getRow);
+//        }
+//    }
+//    
+//    private agregarAlTicket(){
+//        this.listadoProductos = new Productos(this.cbd.listarProductos());
+//        limpiartabla();
+//        for (int i = 0; i < listadoCafe.size(); i++) {
+//            Producto get = listadoCafe.get(i);
+//            
+//        }
+//    }
+
+
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
