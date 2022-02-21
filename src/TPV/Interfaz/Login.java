@@ -144,7 +144,7 @@ public class Login extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(52, Short.MAX_VALUE)
+                .addContainerGap(25, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel1)
                     .addComponent(jLabel4))
@@ -175,7 +175,7 @@ public class Login extends javax.swing.JFrame {
 
         btn9.setBackground(new java.awt.Color(255, 204, 0));
         btn9.setFont(new java.awt.Font("Roboto Light", 0, 18)); // NOI18N
-        btn9.setForeground(new java.awt.Color(255, 255, 255));
+        btn9.setForeground(new java.awt.Color(0, 0, 0));
         btn9.setText("9");
         btn9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
         btn9.addActionListener(new java.awt.event.ActionListener() {
@@ -187,7 +187,7 @@ public class Login extends javax.swing.JFrame {
 
         btn7.setBackground(new java.awt.Color(255, 204, 0));
         btn7.setFont(new java.awt.Font("Roboto Light", 0, 18)); // NOI18N
-        btn7.setForeground(new java.awt.Color(255, 255, 255));
+        btn7.setForeground(new java.awt.Color(0, 0, 0));
         btn7.setText("7");
         btn7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
         btn7.addActionListener(new java.awt.event.ActionListener() {
@@ -199,7 +199,7 @@ public class Login extends javax.swing.JFrame {
 
         btnBorrar.setBackground(new java.awt.Color(255, 204, 0));
         btnBorrar.setFont(new java.awt.Font("Roboto Light", 0, 18)); // NOI18N
-        btnBorrar.setForeground(new java.awt.Color(255, 255, 255));
+        btnBorrar.setForeground(new java.awt.Color(0, 0, 0));
         btnBorrar.setText("Borrar");
         btnBorrar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
         btnBorrar.addActionListener(new java.awt.event.ActionListener() {
@@ -211,7 +211,7 @@ public class Login extends javax.swing.JFrame {
 
         btn8.setBackground(new java.awt.Color(255, 204, 0));
         btn8.setFont(new java.awt.Font("Roboto Light", 0, 18)); // NOI18N
-        btn8.setForeground(new java.awt.Color(255, 255, 255));
+        btn8.setForeground(new java.awt.Color(0, 0, 0));
         btn8.setText("8");
         btn8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
         btn8.addActionListener(new java.awt.event.ActionListener() {
@@ -223,7 +223,7 @@ public class Login extends javax.swing.JFrame {
 
         btn4.setBackground(new java.awt.Color(255, 204, 0));
         btn4.setFont(new java.awt.Font("Roboto Light", 0, 18)); // NOI18N
-        btn4.setForeground(new java.awt.Color(255, 255, 255));
+        btn4.setForeground(new java.awt.Color(0, 0, 0));
         btn4.setText("4");
         btn4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
         btn4.addActionListener(new java.awt.event.ActionListener() {
@@ -235,7 +235,7 @@ public class Login extends javax.swing.JFrame {
 
         btn5.setBackground(new java.awt.Color(255, 204, 0));
         btn5.setFont(new java.awt.Font("Roboto Light", 0, 18)); // NOI18N
-        btn5.setForeground(new java.awt.Color(255, 255, 255));
+        btn5.setForeground(new java.awt.Color(0, 0, 0));
         btn5.setText("5");
         btn5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
         btn5.addActionListener(new java.awt.event.ActionListener() {
@@ -247,7 +247,7 @@ public class Login extends javax.swing.JFrame {
 
         btn6.setBackground(new java.awt.Color(255, 204, 0));
         btn6.setFont(new java.awt.Font("Roboto Light", 0, 18)); // NOI18N
-        btn6.setForeground(new java.awt.Color(255, 255, 255));
+        btn6.setForeground(new java.awt.Color(0, 0, 0));
         btn6.setText("6");
         btn6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
         btn6.addActionListener(new java.awt.event.ActionListener() {
@@ -259,7 +259,7 @@ public class Login extends javax.swing.JFrame {
 
         btn0.setBackground(new java.awt.Color(255, 204, 0));
         btn0.setFont(new java.awt.Font("Roboto Light", 0, 18)); // NOI18N
-        btn0.setForeground(new java.awt.Color(255, 255, 255));
+        btn0.setForeground(new java.awt.Color(0, 0, 0));
         btn0.setText("0");
         btn0.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
         btn0.addActionListener(new java.awt.event.ActionListener() {
@@ -271,7 +271,7 @@ public class Login extends javax.swing.JFrame {
 
         btn1.setBackground(new java.awt.Color(255, 204, 0));
         btn1.setFont(new java.awt.Font("Roboto Light", 0, 18)); // NOI18N
-        btn1.setForeground(new java.awt.Color(255, 255, 255));
+        btn1.setForeground(new java.awt.Color(0, 0, 0));
         btn1.setText("1");
         btn1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
         btn1.addActionListener(new java.awt.event.ActionListener() {
@@ -283,7 +283,7 @@ public class Login extends javax.swing.JFrame {
 
         btn2.setBackground(new java.awt.Color(255, 204, 0));
         btn2.setFont(new java.awt.Font("Roboto Light", 0, 18)); // NOI18N
-        btn2.setForeground(new java.awt.Color(255, 255, 255));
+        btn2.setForeground(new java.awt.Color(0, 0, 0));
         btn2.setText("2");
         btn2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
         btn2.addActionListener(new java.awt.event.ActionListener() {
@@ -295,7 +295,7 @@ public class Login extends javax.swing.JFrame {
 
         btn3.setBackground(new java.awt.Color(255, 204, 0));
         btn3.setFont(new java.awt.Font("Roboto Light", 0, 18)); // NOI18N
-        btn3.setForeground(new java.awt.Color(255, 255, 255));
+        btn3.setForeground(new java.awt.Color(0, 0, 0));
         btn3.setText("3");
         btn3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
         btn3.addActionListener(new java.awt.event.ActionListener() {
@@ -311,13 +311,12 @@ public class Login extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(21, 21, 21))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(Teclado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(67, 67, 67))))
+                .addComponent(Teclado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(67, 67, 67))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(54, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -329,7 +328,7 @@ public class Login extends javax.swing.JFrame {
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 0, 340, 450));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 0, 370, 450));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -433,7 +432,7 @@ public class Login extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnUsuario5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnUsuario6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(73, Short.MAX_VALUE))
         );
 
         jLabel3.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
@@ -447,12 +446,12 @@ public class Login extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(52, Short.MAX_VALUE))
             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel4Layout.createSequentialGroup()
                     .addGap(131, 131, 131)
                     .addComponent(jLabel3)
-                    .addContainerGap(128, Short.MAX_VALUE)))
+                    .addContainerGap(156, Short.MAX_VALUE)))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -464,7 +463,7 @@ public class Login extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createSequentialGroup()
                     .addGap(21, 21, 21)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(357, Short.MAX_VALUE)))
+                    .addContainerGap(385, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -472,16 +471,12 @@ public class Login extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addGap(0, 32, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(17, Short.MAX_VALUE))
+            .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 441));
@@ -642,7 +637,7 @@ public class Login extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
