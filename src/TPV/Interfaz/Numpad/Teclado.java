@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package view.tecladoNum;
+package TPV.Interfaz.Numpad;
 
 import javax.swing.JPanel;
 
@@ -34,18 +34,18 @@ public class Teclado extends JPanel{
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnTeclado7 = new view.tecladoNum.btnTeclado();
-        btnTeclado8 = new view.tecladoNum.btnTeclado();
-        btnTeclado9 = new view.tecladoNum.btnTeclado();
-        btnTeclado4 = new view.tecladoNum.btnTeclado();
-        btnTeclado5 = new view.tecladoNum.btnTeclado();
-        btnTeclado6 = new view.tecladoNum.btnTeclado();
-        btnTeclado1 = new view.tecladoNum.btnTeclado();
-        btnTeclado2 = new view.tecladoNum.btnTeclado();
-        btnTeclado3 = new view.tecladoNum.btnTeclado();
-        btnTeclado00 = new view.tecladoNum.btnTeclado();
-        btnBorrar = new view.tecladoNum.btnTeclado();
-        btnOk = new view.tecladoNum.btnTeclado();
+        btnTeclado7 = new TPV.Interfaz.Numpad.btnTeclado();
+        btnTeclado8 = new TPV.Interfaz.Numpad.btnTeclado();
+        btnTeclado9 = new TPV.Interfaz.Numpad.btnTeclado();
+        btnTeclado4 = new TPV.Interfaz.Numpad.btnTeclado();
+        btnTeclado5 = new TPV.Interfaz.Numpad.btnTeclado();
+        btnTeclado6 = new TPV.Interfaz.Numpad.btnTeclado();
+        btnTeclado1 = new TPV.Interfaz.Numpad.btnTeclado();
+        btnTeclado2 = new TPV.Interfaz.Numpad.btnTeclado();
+        btnTeclado3 = new TPV.Interfaz.Numpad.btnTeclado();
+        btnTeclado00 = new TPV.Interfaz.Numpad.btnTeclado();
+        btnBorrar = new TPV.Interfaz.Numpad.btnTeclado();
+        btnOk = new TPV.Interfaz.Numpad.btnTeclado();
 
         setBackground(new java.awt.Color(102, 153, 255));
 
@@ -243,17 +243,17 @@ public class Teclado extends JPanel{
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public static view.tecladoNum.btnTeclado btnBorrar;
-    public static view.tecladoNum.btnTeclado btnOk;
-    public static view.tecladoNum.btnTeclado btnTeclado00;
-    public static view.tecladoNum.btnTeclado btnTeclado1;
-    public static view.tecladoNum.btnTeclado btnTeclado2;
-    public static view.tecladoNum.btnTeclado btnTeclado3;
-    public static view.tecladoNum.btnTeclado btnTeclado4;
-    public static view.tecladoNum.btnTeclado btnTeclado5;
-    public static view.tecladoNum.btnTeclado btnTeclado6;
-    public static view.tecladoNum.btnTeclado btnTeclado7;
-    public static view.tecladoNum.btnTeclado btnTeclado8;
-    public static view.tecladoNum.btnTeclado btnTeclado9;
+    public static TPV.Interfaz.Numpad.btnTeclado btnBorrar;
+    public static TPV.Interfaz.Numpad.btnTeclado btnOk;
+    public static TPV.Interfaz.Numpad.btnTeclado btnTeclado00;
+    public static TPV.Interfaz.Numpad.btnTeclado btnTeclado1;
+    public static TPV.Interfaz.Numpad.btnTeclado btnTeclado2;
+    public static TPV.Interfaz.Numpad.btnTeclado btnTeclado3;
+    public static TPV.Interfaz.Numpad.btnTeclado btnTeclado4;
+    public static TPV.Interfaz.Numpad.btnTeclado btnTeclado5;
+    public static TPV.Interfaz.Numpad.btnTeclado btnTeclado6;
+    public static TPV.Interfaz.Numpad.btnTeclado btnTeclado7;
+    public static TPV.Interfaz.Numpad.btnTeclado btnTeclado8;
+    public static TPV.Interfaz.Numpad.btnTeclado btnTeclado9;
     // End of variables declaration//GEN-END:variables
 }

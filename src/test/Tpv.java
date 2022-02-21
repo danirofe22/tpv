@@ -8,12 +8,12 @@ package test;
 import java.io.File;
 import java.sql.SQLException;
 import javax.swing.ImageIcon;
-import model.Conexion;
-import model.ConsultasDb;
-import model.GestionBlob;
-import model.Producto;
-import model.Usuario;
-import model.Venta;
+import TPV.DB.Conexion;
+import TPV.DB.ConsultasDb;
+import TPV.Gestion.GestionBlob;
+import TPV.Model.Producto;
+import TPV.Model.Usuario;
+import TPV.Model.Venta;
 
 /**
  *

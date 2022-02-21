@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package view.tecladoNum;
+package TPV.Interfaz.Numpad;
 
 import javax.swing.JButton;
-import view.Login;
+import TPV.Interfaz.Login;
 
 /**
  *

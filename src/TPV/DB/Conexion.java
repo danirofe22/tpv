@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package TPV.DB;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -16,7 +16,7 @@ import java.sql.SQLException;
 public class Conexion {
 
     //Constantes para establecer la conexion con la BBDD
-    private final String usuario= "dani";
+    private final String usuario= "userdb";
     private final String password = "1234";
     private final String host = "localhost";
     private final String db = "cafe";

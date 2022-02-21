@@ -3,14 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package view;
+package TPV.Interfaz;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import model.ConsultasDb;
-import model.GestionBlob;
+import TPV.DB.ConsultasDb;
+import TPV.Gestion.GestionBlob;
+import TPV.Model.Usuario;
+import TPV.Gestion.Usuarios;
+import javax.swing.JOptionPane;
 /**
  *
  * @author drofe
@@ -20,6 +23,10 @@ public class Login extends javax.swing.JFrame {
     GestionBlob Gb;
     ConsultasDb cbd;
     ArrayList<Integer> usuarios;
+    Usuarios userList;
+    InterfazUsuario iff = new InterfazUsuario();
+    Usuarios userList2;
+    
     /**
      * Creates new form Login
      */
@@ -35,6 +42,10 @@ public class Login extends javax.swing.JFrame {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
+    /**
+     * cargarUsuarios() Carga los 
+     * @throws SQLException 
+     */
     private void cargarUsuarios() throws SQLException{
         usuarios = cbd.listarUsuarios();
         this.btnUsuario1.setIcon(Gb.getFotoEmpleado(usuarios.get(0)));
@@ -43,6 +54,7 @@ public class Login extends javax.swing.JFrame {
         this.btnUsuario4.setIcon(Gb.getFotoEmpleado(usuarios.get(3)));
         this.btnUsuario5.setIcon(Gb.getFotoEmpleado(usuarios.get(4)));
         this.btnUsuario6.setIcon(Gb.getFotoEmpleado(usuarios.get(5))); 
+        
     }
 
 
@@ -69,7 +81,6 @@ public class Login extends javax.swing.JFrame {
         btn1 = new javax.swing.JButton();
         btn2 = new javax.swing.JButton();
         btn3 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
@@ -133,10 +144,10 @@ public class Login extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(52, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel1))
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel4))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnInicio, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
@@ -294,16 +305,12 @@ public class Login extends javax.swing.JFrame {
         });
         Teclado.add(btn3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 65, 55));
 
-        jLabel2.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Usuarios");
-
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(20, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -311,11 +318,6 @@ public class Login extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addComponent(Teclado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(67, 67, 67))))
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel3Layout.createSequentialGroup()
-                    .addGap(134, 134, 134)
-                    .addComponent(jLabel2)
-                    .addContainerGap(135, Short.MAX_VALUE)))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -324,12 +326,7 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(Teclado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel3Layout.createSequentialGroup()
-                    .addGap(207, 207, 207)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(208, Short.MAX_VALUE)))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 0, 340, 450));
@@ -436,7 +433,7 @@ public class Login extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnUsuario5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnUsuario6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         jLabel3.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
@@ -450,7 +447,7 @@ public class Login extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel4Layout.createSequentialGroup()
                     .addGap(131, 131, 131)
@@ -493,8 +490,21 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioActionPerformed
-        // TODO add your handling code here:
-        
+       if(!this.txtUsuario.getText().isEmpty() && !this.txtContraseña.getText().isEmpty()) {          
+        if(cbd.logearUsuario(Integer.parseInt(this.txtUsuario.getText()), Integer.parseInt(this.txtContraseña.getText()))) {
+        iff.setVisible(true);
+        this.setVisible(false);
+        } else {
+            JOptionPane.showMessageDialog(null,
+                        "Error: Codigo incorrecto", "Error!",
+                        JOptionPane.ERROR_MESSAGE);
+        }
+       } else {
+           JOptionPane.showMessageDialog(null,
+                        "Error: Rellena los campos", "Error!",
+                        JOptionPane.ERROR_MESSAGE);
+       }
+      
     }//GEN-LAST:event_btnInicioActionPerformed
 
     private void txtUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtUsuarioMouseClicked
@@ -575,32 +585,45 @@ public class Login extends javax.swing.JFrame {
     private void btnUsuario1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUsuario1MouseClicked
         // TODO add your handling code here:
         this.txtUsuario.setText(String.valueOf(usuarios.get(0)));
+        Usuario user2 = new Usuario();
+        user2.setLogin(Integer.parseInt(txtUsuario.getText()));
+       
         
     }//GEN-LAST:event_btnUsuario1MouseClicked
 
     private void btnUsuario2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUsuario2MouseClicked
         // TODO add your handling code here:
         this.txtUsuario.setText(String.valueOf(usuarios.get(1)));
+        
+        
     }//GEN-LAST:event_btnUsuario2MouseClicked
 
     private void btnUsuario3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUsuario3MouseClicked
         // TODO add your handling code here:
         this.txtUsuario.setText(String.valueOf(usuarios.get(2)));
+        
+        
     }//GEN-LAST:event_btnUsuario3MouseClicked
 
     private void btnUsuario4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUsuario4MouseClicked
         // TODO add your handling code here:
         this.txtUsuario.setText(String.valueOf(usuarios.get(3)));
+        
+        
     }//GEN-LAST:event_btnUsuario4MouseClicked
 
     private void btnUsuario5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUsuario5MouseClicked
         // TODO add your handling code here:
         this.txtUsuario.setText(String.valueOf(usuarios.get(4)));
+
+        
     }//GEN-LAST:event_btnUsuario5MouseClicked
 
     private void btnUsuario6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUsuario6MouseClicked
         // TODO add your handling code here:
         this.txtUsuario.setText(String.valueOf(usuarios.get(5)));
+        
+       
     }//GEN-LAST:event_btnUsuario6MouseClicked
 
     private void txtContraseñaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtContraseñaKeyPressed
@@ -668,7 +691,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel btnUsuario5;
     private javax.swing.JLabel btnUsuario6;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;

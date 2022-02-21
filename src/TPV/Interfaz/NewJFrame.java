@@ -3,19 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package view;
+package TPV.Interfaz;
 
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
-import model.ConsultasDb;
-import model.Producto;
-import model.Productos;
-import model.Usuarios;
-import model.Usuario;
-import model.Venta;
-import model.Ventas;
+import TPV.DB.ConsultasDb;
+import TPV.Model.Producto;
+import TPV.Gestion.Productos;
+import TPV.Gestion.Usuarios;
+import TPV.Model.Usuario;
+import TPV.Model.Venta;
+import TPV.Gestion.Ventas;
 
 /**
  *
@@ -555,7 +555,7 @@ public class NewJFrame extends javax.swing.JFrame {
             panelListaVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelListaVentasLayout.createSequentialGroup()
                 .addGap(6, 6, 6)
-                .addComponent(lblVentas, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
+                .addComponent(lblVentas, javax.swing.GroupLayout.PREFERRED_SIZE, 44, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())

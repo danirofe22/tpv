@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package view;
+package TPV.Interfaz;
 
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
-import model.ConsultasDb;
-import model.Producto;
-import model.Productos;
+import TPV.DB.ConsultasDb;
+import TPV.Model.Producto;
+import TPV.Gestion.Productos;
 
 /**
  *
@@ -20,6 +20,7 @@ public class InterfazUsuario extends javax.swing.JFrame {
     private ArrayList<Producto> listadoRefrescos;
     private DefaultTableModel modeloTablaTicket;
     private ConsultasDb cbd;
+    Login loginFrame;
     /**
      * Creates new form InterfazUsuario
      */
@@ -146,6 +147,8 @@ public class InterfazUsuario extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
+        jLabel20 = new javax.swing.JLabel();
+        showUser = new javax.swing.JLabel();
         panelTicket = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableTicket = new javax.swing.JTable();
@@ -172,7 +175,6 @@ public class InterfazUsuario extends javax.swing.JFrame {
         panelCafes.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnCafe1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnCafe1.setLabel("");
         panelCafes.add(btnCafe1, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 26, 99, 70));
 
         lblCafe1.setBackground(new java.awt.Color(102, 102, 102));
@@ -184,7 +186,6 @@ public class InterfazUsuario extends javax.swing.JFrame {
         panelCafes.add(lblCafe1, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 102, 99, 25));
 
         btnCafe2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnCafe2.setLabel("");
         panelCafes.add(btnCafe2, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 26, 99, 70));
 
         lblCafe2.setBackground(new java.awt.Color(102, 102, 102));
@@ -196,7 +197,6 @@ public class InterfazUsuario extends javax.swing.JFrame {
         panelCafes.add(lblCafe2, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 102, 99, 25));
 
         btnCafe3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnCafe3.setLabel("");
         panelCafes.add(btnCafe3, new org.netbeans.lib.awtextra.AbsoluteConstraints(249, 26, 99, 70));
 
         lblCafe3.setBackground(new java.awt.Color(102, 102, 102));
@@ -208,7 +208,6 @@ public class InterfazUsuario extends javax.swing.JFrame {
         panelCafes.add(lblCafe3, new org.netbeans.lib.awtextra.AbsoluteConstraints(249, 102, 99, 25));
 
         btnCafe4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnCafe4.setLabel("");
         panelCafes.add(btnCafe4, new org.netbeans.lib.awtextra.AbsoluteConstraints(354, 26, 99, 70));
 
         lblCafe4.setBackground(new java.awt.Color(102, 102, 102));
@@ -220,7 +219,6 @@ public class InterfazUsuario extends javax.swing.JFrame {
         panelCafes.add(lblCafe4, new org.netbeans.lib.awtextra.AbsoluteConstraints(354, 102, 99, 25));
 
         btnCafe5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnCafe5.setLabel("");
         panelCafes.add(btnCafe5, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 145, 99, 70));
 
         lblCafe5.setBackground(new java.awt.Color(102, 102, 102));
@@ -232,7 +230,6 @@ public class InterfazUsuario extends javax.swing.JFrame {
         panelCafes.add(lblCafe5, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 221, 99, 25));
 
         btnCafe6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnCafe6.setLabel("");
         panelCafes.add(btnCafe6, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 145, 99, 70));
 
         lblCafe6.setBackground(new java.awt.Color(102, 102, 102));
@@ -244,7 +241,6 @@ public class InterfazUsuario extends javax.swing.JFrame {
         panelCafes.add(lblCafe6, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 221, 99, 25));
 
         btnCafe7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnCafe7.setLabel("");
         panelCafes.add(btnCafe7, new org.netbeans.lib.awtextra.AbsoluteConstraints(249, 145, 99, 70));
 
         lblCafe7.setBackground(new java.awt.Color(102, 102, 102));
@@ -256,7 +252,6 @@ public class InterfazUsuario extends javax.swing.JFrame {
         panelCafes.add(lblCafe7, new org.netbeans.lib.awtextra.AbsoluteConstraints(249, 221, 99, 25));
 
         btnCafe8.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnCafe8.setLabel("");
         panelCafes.add(btnCafe8, new org.netbeans.lib.awtextra.AbsoluteConstraints(354, 145, 99, 70));
 
         lblCafe8.setBackground(new java.awt.Color(102, 102, 102));
@@ -276,19 +271,15 @@ public class InterfazUsuario extends javax.swing.JFrame {
         panelCafes.add(lblCafe12, new org.netbeans.lib.awtextra.AbsoluteConstraints(354, 340, 99, 25));
 
         btnCafe11.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnCafe11.setLabel("");
         panelCafes.add(btnCafe11, new org.netbeans.lib.awtextra.AbsoluteConstraints(249, 264, 99, 70));
 
         btnCafe12.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnCafe12.setLabel("");
         panelCafes.add(btnCafe12, new org.netbeans.lib.awtextra.AbsoluteConstraints(354, 264, 99, 70));
 
         btnCafe10.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnCafe10.setLabel("");
         panelCafes.add(btnCafe10, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 264, 99, 70));
 
         btnCafe9.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnCafe9.setLabel("");
         panelCafes.add(btnCafe9, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 264, 99, 70));
 
         lblCafe11.setBackground(new java.awt.Color(102, 102, 102));
@@ -332,7 +323,6 @@ public class InterfazUsuario extends javax.swing.JFrame {
         panelCafes.add(lblCafe15, new org.netbeans.lib.awtextra.AbsoluteConstraints(249, 459, 99, 25));
 
         btnCafe16.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnCafe16.setLabel("");
         panelCafes.add(btnCafe16, new org.netbeans.lib.awtextra.AbsoluteConstraints(354, 383, 99, 70));
 
         lblCafe14.setBackground(new java.awt.Color(102, 102, 102));
@@ -352,15 +342,12 @@ public class InterfazUsuario extends javax.swing.JFrame {
         panelCafes.add(lblCafe13, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 459, 99, 25));
 
         btnCafe15.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnCafe15.setLabel("");
         panelCafes.add(btnCafe15, new org.netbeans.lib.awtextra.AbsoluteConstraints(249, 383, 99, 70));
 
         btnCafe14.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnCafe14.setLabel("");
         panelCafes.add(btnCafe14, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 383, 99, 70));
 
         btnCafe13.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnCafe13.setLabel("");
         panelCafes.add(btnCafe13, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 383, 99, 70));
 
         jTabbedPane2.addTab("Cafes", panelCafes);
@@ -511,31 +498,22 @@ public class InterfazUsuario extends javax.swing.JFrame {
         Productos.addTab("Productos", jPanel2);
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\drofe\\EIG\\DESARROLLO DE INTERFACES\\tpv\\img\\mesa.png")); // NOI18N
         jLabel1.setText("Mesa1");
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\drofe\\EIG\\DESARROLLO DE INTERFACES\\tpv\\img\\mesa.png")); // NOI18N
         jLabel2.setText("jLabel1");
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\drofe\\EIG\\DESARROLLO DE INTERFACES\\tpv\\img\\mesa.png")); // NOI18N
         jLabel3.setText("jLabel1");
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\drofe\\EIG\\DESARROLLO DE INTERFACES\\tpv\\img\\mesa.png")); // NOI18N
         jLabel4.setText("jLabel1");
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\drofe\\EIG\\DESARROLLO DE INTERFACES\\tpv\\img\\mesa.png")); // NOI18N
         jLabel5.setText("jLabel1");
 
-        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\drofe\\EIG\\DESARROLLO DE INTERFACES\\tpv\\img\\mesa.png")); // NOI18N
         jLabel6.setText("jLabel1");
 
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\drofe\\EIG\\DESARROLLO DE INTERFACES\\tpv\\img\\mesa.png")); // NOI18N
         jLabel7.setText("jLabel1");
 
-        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\drofe\\EIG\\DESARROLLO DE INTERFACES\\tpv\\img\\mesa.png")); // NOI18N
         jLabel8.setText("jLabel1");
 
-        jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\drofe\\EIG\\DESARROLLO DE INTERFACES\\tpv\\img\\mesa.png")); // NOI18N
         jLabel9.setText("jLabel1");
 
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -653,15 +631,27 @@ public class InterfazUsuario extends javax.swing.JFrame {
 
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jLabel20.setText("Usuario:");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 188, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(72, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(showUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(69, 69, 69))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 318, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(jLabel20)
+                .addGap(18, 18, 18)
+                .addComponent(showUser, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(250, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 240, 190, 320));
@@ -977,6 +967,7 @@ public class InterfazUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1026,6 +1017,7 @@ public class InterfazUsuario extends javax.swing.JFrame {
     private javax.swing.JPanel panelCafes;
     private javax.swing.JPanel panelCafes1;
     private javax.swing.JPanel panelTicket;
+    private javax.swing.JLabel showUser;
     private javax.swing.JTable tableTicket;
     // End of variables declaration//GEN-END:variables
 }

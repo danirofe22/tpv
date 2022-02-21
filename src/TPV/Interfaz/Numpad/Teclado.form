@@ -87,7 +87,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="view.tecladoNum.btnTeclado" name="btnTeclado7">
+    <Component class="TPV.Interfaz.Numpad.btnTeclado" name="btnTeclado7">
       <Properties>
         <Property name="text" type="java.lang.String" value="7"/>
       </Properties>
@@ -98,7 +98,7 @@
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
       </AuxValues>
     </Component>
-    <Component class="view.tecladoNum.btnTeclado" name="btnTeclado8">
+    <Component class="TPV.Interfaz.Numpad.btnTeclado" name="btnTeclado8">
       <Properties>
         <Property name="text" type="java.lang.String" value="8"/>
       </Properties>
@@ -109,7 +109,7 @@
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
       </AuxValues>
     </Component>
-    <Component class="view.tecladoNum.btnTeclado" name="btnTeclado9">
+    <Component class="TPV.Interfaz.Numpad.btnTeclado" name="btnTeclado9">
       <Properties>
         <Property name="text" type="java.lang.String" value="9"/>
       </Properties>
@@ -120,7 +120,7 @@
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
       </AuxValues>
     </Component>
-    <Component class="view.tecladoNum.btnTeclado" name="btnTeclado4">
+    <Component class="TPV.Interfaz.Numpad.btnTeclado" name="btnTeclado4">
       <Properties>
         <Property name="text" type="java.lang.String" value="4"/>
       </Properties>
@@ -131,7 +131,7 @@
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
       </AuxValues>
     </Component>
-    <Component class="view.tecladoNum.btnTeclado" name="btnTeclado5">
+    <Component class="TPV.Interfaz.Numpad.btnTeclado" name="btnTeclado5">
       <Properties>
         <Property name="text" type="java.lang.String" value="5"/>
       </Properties>
@@ -142,7 +142,7 @@
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
       </AuxValues>
     </Component>
-    <Component class="view.tecladoNum.btnTeclado" name="btnTeclado6">
+    <Component class="TPV.Interfaz.Numpad.btnTeclado" name="btnTeclado6">
       <Properties>
         <Property name="text" type="java.lang.String" value="6"/>
       </Properties>
@@ -153,7 +153,7 @@
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
       </AuxValues>
     </Component>
-    <Component class="view.tecladoNum.btnTeclado" name="btnTeclado1">
+    <Component class="TPV.Interfaz.Numpad.btnTeclado" name="btnTeclado1">
       <Properties>
         <Property name="text" type="java.lang.String" value="1"/>
       </Properties>
@@ -164,7 +164,7 @@
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
       </AuxValues>
     </Component>
-    <Component class="view.tecladoNum.btnTeclado" name="btnTeclado2">
+    <Component class="TPV.Interfaz.Numpad.btnTeclado" name="btnTeclado2">
       <Properties>
         <Property name="text" type="java.lang.String" value="2"/>
       </Properties>
@@ -175,7 +175,7 @@
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
       </AuxValues>
     </Component>
-    <Component class="view.tecladoNum.btnTeclado" name="btnTeclado3">
+    <Component class="TPV.Interfaz.Numpad.btnTeclado" name="btnTeclado3">
       <Properties>
         <Property name="text" type="java.lang.String" value="3"/>
       </Properties>
@@ -186,7 +186,7 @@
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
       </AuxValues>
     </Component>
-    <Component class="view.tecladoNum.btnTeclado" name="btnTeclado00">
+    <Component class="TPV.Interfaz.Numpad.btnTeclado" name="btnTeclado00">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnTeclado00ActionPerformed"/>
       </Events>
@@ -194,7 +194,7 @@
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
       </AuxValues>
     </Component>
-    <Component class="view.tecladoNum.btnTeclado" name="btnBorrar">
+    <Component class="TPV.Interfaz.Numpad.btnTeclado" name="btnBorrar">
       <Properties>
         <Property name="text" type="java.lang.String" value="BORRAR"/>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -208,7 +208,7 @@
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
       </AuxValues>
     </Component>
-    <Component class="view.tecladoNum.btnTeclado" name="btnOk">
+    <Component class="TPV.Interfaz.Numpad.btnTeclado" name="btnOk">
       <Properties>
         <Property name="text" type="java.lang.String" value="OK"/>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">

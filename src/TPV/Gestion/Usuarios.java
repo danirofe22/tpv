@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package TPV.Gestion;
 
+import TPV.Model.Usuario;
 import java.util.ArrayList;
 
 /**
@@ -20,6 +21,11 @@ public class Usuarios {
 
     public Usuarios(ArrayList<Usuario> listadoUsuarios) {
         this.listadoUsuarios = listadoUsuarios;
+    }
+    
+    
+    public void add(Usuario usuario){
+        this.listadoUsuarios.add(usuario);
     }
     
     public Usuario get(int pos){

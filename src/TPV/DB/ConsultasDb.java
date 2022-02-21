@@ -3,12 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package TPV.DB;
 
+import TPV.Gestion.GestionBlob;
+import TPV.Model.Producto;
+import TPV.Model.Usuario;
+import TPV.Model.Venta;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -76,6 +82,31 @@ public class ConsultasDb {
         String sql  = String.format("UPDATE cafe.usuarios SET nombre =('%s'), apellidos = ('%s'), login = (%s), password = (%s) WHERE login = (%s)", user.getNombre(), user.getApellidos(), user.getLogin(), user.getPassword(), user.getLogin());
         resultado = sentencia.execute(sql);
         this.con.desconectar();
+    }
+    
+    
+    public boolean logearUsuario(int user, int pass) {
+       boolean logged = false;
+        try {
+            
+            this.con.conectar();
+            Statement sentencia  = this.con.conexion.createStatement();
+            ResultSet rs;
+            String sql = "SELECT COUNT(*) FROM usuarios WHERE login =" + user + " and password =" + pass;
+            rs = sentencia.executeQuery(sql);
+            rs = sentencia.getResultSet();
+            
+            while(rs.next()) {
+                int codigo = rs.getInt(1);
+                
+                if(codigo == 1) {
+                    logged = true;
+                } 
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ConsultasDb.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return logged;
     }
     
     public ArrayList<Integer> listarUsuarios() throws SQLException{
