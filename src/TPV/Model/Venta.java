@@ -5,10 +5,9 @@
  */
 package TPV.Model;
 
-/**
- *
- * @author drofe
- */
+
+
+
 public class Venta {
     private int idProducto;
     private int numeroTicket;

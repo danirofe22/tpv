@@ -8,25 +8,140 @@ package TPV.Interfaz;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import TPV.DB.ConsultasDb;
+import TPV.Gestion.GestionBlob;
 import TPV.Model.Producto;
 import TPV.Gestion.Productos;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.DefaultListModel;
+import javax.swing.JButton;
+import javax.swing.JLabel;
 
-/**
- *
- * @author drofe
- */
+
 public class InterfazUsuario extends javax.swing.JFrame {
     private ArrayList<Producto> listadoCafe;
     private ArrayList<Producto> listadoRefrescos;
     private DefaultTableModel modeloTablaTicket;
     private ConsultasDb cbd;
-    Login loginFrame;
+    private ArrayList<JButton> botonesRefrescos;
+    private ArrayList<JButton> botonesCafe;
+    private ArrayList<JLabel> labelRefrescos;
+    private ArrayList<JLabel> labelCafe;
+    private Productos prods;
+    private Login loginFrame;
+    private GestionBlob blob;
+    private DefaultListModel;
+    
     /**
      * Creates new form InterfazUsuario
      */
-    public InterfazUsuario() {
-        modeloTablaTicket = new DefaultTableModel();
+    public InterfazUsuario() throws SQLException {
+        this.modeloTablaTicket = new DefaultTableModel();
         initComponents();
+        this.blob = new GestionBlob();
+        this.cbd = new ConsultasDb();
+        this.cargarBotones();
+    }
+    
+    
+    public void listarBotones() throws SQLException{
+        
+        this.botonesCafe = new ArrayList<>();
+        
+        botonesCafe.add(this.btnCafe1);
+        botonesCafe.add(this.btnCafe2);
+        botonesCafe.add(this.btnCafe3);
+        botonesCafe.add(this.btnCafe4);
+        botonesCafe.add(this.btnCafe5);
+        botonesCafe.add(this.btnCafe6);
+        botonesCafe.add(this.btnCafe7);
+        botonesCafe.add(this.btnCafe8);
+        botonesCafe.add(this.btnCafe9);
+        botonesCafe.add(this.btnCafe10);
+        botonesCafe.add(this.btnCafe11);
+        botonesCafe.add(this.btnCafe12);
+        botonesCafe.add(this.btnCafe13);
+        botonesCafe.add(this.btnCafe14);
+        botonesCafe.add(this.btnCafe15);
+        botonesCafe.add(this.btnCafe16);
+        
+        
+        this.labelCafe = new ArrayList<>();
+        
+        labelCafe.add(this.lblCafe1);
+        labelCafe.add(this.lblCafe2);
+        labelCafe.add(this.lblCafe3);
+        labelCafe.add(this.lblCafe4);
+        labelCafe.add(this.lblCafe5);
+        labelCafe.add(this.lblCafe6);
+        labelCafe.add(this.lblCafe7);
+        labelCafe.add(this.lblCafe8);
+        labelCafe.add(this.lblCafe9);
+        labelCafe.add(this.lblCafe10);
+        labelCafe.add(this.lblCafe11);
+        labelCafe.add(this.lblCafe12);
+        labelCafe.add(this.lblCafe13);
+        labelCafe.add(this.lblCafe14);
+        labelCafe.add(this.lblCafe15);
+        labelCafe.add(this.lblCafe16);
+        
+        
+        
+        this.botonesRefrescos = new ArrayList<>();
+        
+        botonesRefrescos.add(this.btnRefresco1);
+        botonesRefrescos.add(this.btnRefresco2);
+        botonesRefrescos.add(this.btnRefresco3);
+        botonesRefrescos.add(this.btnRefresco4);
+        botonesRefrescos.add(this.btnRefresco5);
+        botonesRefrescos.add(this.btnRefresco6);
+        botonesRefrescos.add(this.btnRefresco7);
+        botonesRefrescos.add(this.btnRefresco8);
+        botonesRefrescos.add(this.btnRefresco9);
+        botonesRefrescos.add(this.btnRefresco10);
+        botonesRefrescos.add(this.btnRefresco11);
+        botonesRefrescos.add(this.btnRefresco12);
+        botonesRefrescos.add(this.btnRefresco13);
+        botonesRefrescos.add(this.btnRefresco14);
+        botonesRefrescos.add(this.btnRefresco15);
+        botonesRefrescos.add(this.btnRefresco16);
+        
+       
+        
+        
+    }
+    
+    public void cargarBotones() throws SQLException{
+
+        this.listarBotones();
+
+        this.prods = new Productos(cbd.listarProductos());
+        this.listadoCafe = new ArrayList<Producto>();
+        this.listadoRefrescos = new ArrayList<Producto>();
+        
+        
+        
+        for (int i = 0; i < prods.getListadoProductos().size(); i++) {
+            if(prods.getListadoProductos().get(i).getTipo().equals("cafe") && prods.getListadoProductos().get(i)!=null ){
+                this.listadoCafe.add(prods.getListadoProductos().get(i));
+            }else if (prods.getListadoProductos().get(i).getTipo() == "refresco"){
+                this.listadoRefrescos.add(this.prods.getListadoProductos().get(i));
+                
+            }
+        }
+        System.out.println(this.listadoCafe);
+        
+        
+        for (int i = 0; i < listadoCafe.size(); i++) {
+            this.botonesCafe.get(i).setIcon(blob.getFotoProducto(this.listadoCafe.get(i).getIdProducto()));
+            this.labelCafe.get(i).setText(this.listadoCafe.get(i).getNombre());
+            
+        }
+    }
+    
+    private void pulsarProducto(int id){
+        
     }
     
 //    void limpiartabla() {
@@ -150,9 +265,9 @@ public class InterfazUsuario extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         showUser = new javax.swing.JLabel();
         panelTicket = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tableTicket = new javax.swing.JTable();
         jLabel19 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        ticket = new javax.swing.JList<>();
         jPanel11 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         btn6Teclado = new javax.swing.JButton();
@@ -498,22 +613,31 @@ public class InterfazUsuario extends javax.swing.JFrame {
         Productos.addTab("Productos", jPanel2);
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\drofe\\EIG\\DESARROLLO DE INTERFACES\\tpv\\img\\mesa.png")); // NOI18N
         jLabel1.setText("Mesa1");
 
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\drofe\\EIG\\DESARROLLO DE INTERFACES\\tpv\\img\\mesa.png")); // NOI18N
         jLabel2.setText("jLabel1");
 
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\drofe\\EIG\\DESARROLLO DE INTERFACES\\tpv\\img\\mesa.png")); // NOI18N
         jLabel3.setText("jLabel1");
 
+        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\drofe\\EIG\\DESARROLLO DE INTERFACES\\tpv\\img\\mesa.png")); // NOI18N
         jLabel4.setText("jLabel1");
 
+        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\drofe\\EIG\\DESARROLLO DE INTERFACES\\tpv\\img\\mesa.png")); // NOI18N
         jLabel5.setText("jLabel1");
 
+        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\drofe\\EIG\\DESARROLLO DE INTERFACES\\tpv\\img\\mesa.png")); // NOI18N
         jLabel6.setText("jLabel1");
 
+        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\drofe\\EIG\\DESARROLLO DE INTERFACES\\tpv\\img\\mesa.png")); // NOI18N
         jLabel7.setText("jLabel1");
 
+        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\drofe\\EIG\\DESARROLLO DE INTERFACES\\tpv\\img\\mesa.png")); // NOI18N
         jLabel8.setText("jLabel1");
 
+        jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\drofe\\EIG\\DESARROLLO DE INTERFACES\\tpv\\img\\mesa.png")); // NOI18N
         jLabel9.setText("jLabel1");
 
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -660,22 +784,16 @@ public class InterfazUsuario extends javax.swing.JFrame {
         panelTicket.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         panelTicket.setForeground(new java.awt.Color(102, 102, 102));
 
-        tableTicket.setBackground(new java.awt.Color(204, 204, 204));
-        tableTicket.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 3));
-        tableTicket.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        tableTicket.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "IdProducto", "Nombre", "Cantidad", "PvPxProducto", "Total"
-            }
-        ));
-        jScrollPane1.setViewportView(tableTicket);
-
         jLabel19.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(204, 204, 204));
         jLabel19.setText("TICKET");
+
+        ticket.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane2.setViewportView(ticket);
 
         javax.swing.GroupLayout panelTicketLayout = new javax.swing.GroupLayout(panelTicket);
         panelTicket.setLayout(panelTicketLayout);
@@ -684,11 +802,9 @@ public class InterfazUsuario extends javax.swing.JFrame {
             .addGroup(panelTicketLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panelTicketLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelTicketLayout.createSequentialGroup()
-                        .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 418, Short.MAX_VALUE))
-                .addContainerGap())
+                    .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(211, Short.MAX_VALUE))
         );
         panelTicketLayout.setVerticalGroup(
             panelTicketLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -696,8 +812,8 @@ public class InterfazUsuario extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(82, 82, 82))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30))
         );
 
         getContentPane().add(panelTicket, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 240));
@@ -904,7 +1020,11 @@ public class InterfazUsuario extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new InterfazUsuario().setVisible(true);
+                try {
+                    new InterfazUsuario().setVisible(true);
+                } catch (SQLException ex) {
+                    Logger.getLogger(InterfazUsuario.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
@@ -980,7 +1100,7 @@ public class InterfazUsuario extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JLabel lblCafe1;
     private javax.swing.JLabel lblCafe10;
@@ -1018,6 +1138,6 @@ public class InterfazUsuario extends javax.swing.JFrame {
     private javax.swing.JPanel panelCafes1;
     private javax.swing.JPanel panelTicket;
     private javax.swing.JLabel showUser;
-    private javax.swing.JTable tableTicket;
+    private javax.swing.JList<String> ticket;
     // End of variables declaration//GEN-END:variables
 }

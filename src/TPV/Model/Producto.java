@@ -5,10 +5,9 @@
  */
 package TPV.Model;
 
-/**
- *
- * @author drofe
- */
+
+
+
 public class Producto {
     private String nombre;
     private float pvp;

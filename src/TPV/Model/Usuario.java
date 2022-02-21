@@ -7,10 +7,9 @@ package TPV.Model;
 
 import javax.swing.ImageIcon;
 
-/**
- *
- * @author drofe
- */
+
+
+
 public class Usuario {
     private String nombre;
     private String apellidos;

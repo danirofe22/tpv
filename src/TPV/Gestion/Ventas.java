@@ -8,10 +8,9 @@ package TPV.Gestion;
 import TPV.Model.Venta;
 import java.util.ArrayList;
 
-/**
- *
- * @author drofe
- */
+
+
+
 public class Ventas {
      private ArrayList<Venta> listadoVentas;
 

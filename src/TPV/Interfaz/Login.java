@@ -14,10 +14,9 @@ import TPV.Gestion.GestionBlob;
 import TPV.Model.Usuario;
 import TPV.Gestion.Usuarios;
 import javax.swing.JOptionPane;
-/**
- *
- * @author drofe
- */
+
+
+
 public class Login extends javax.swing.JFrame {
     String contraseña = "";
     GestionBlob Gb;
