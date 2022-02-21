@@ -8,10 +8,7 @@ package TPV.Interfaz.Numpad;
 import javax.swing.JButton;
 import TPV.Interfaz.Login;
 
-/**
- *
- * @author drofe
- */
+
 public class btnTeclado extends JButton {
 
     /**

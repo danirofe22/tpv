@@ -7,10 +7,6 @@ package TPV.Interfaz.Numpad;
 
 import javax.swing.JPanel;
 
-/**
- *
- * @author drofe
- */
 public class Teclado extends JPanel{
 
     private String msg = "";
