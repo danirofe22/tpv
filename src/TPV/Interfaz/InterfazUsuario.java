@@ -31,13 +31,14 @@ public class InterfazUsuario extends javax.swing.JFrame {
     private Productos prods;
     private Login loginFrame;
     private GestionBlob blob;
-    private DefaultListModel;
+    private DefaultListModel modeloTicket;
     
     /**
      * Creates new form InterfazUsuario
      */
     public InterfazUsuario() throws SQLException {
         this.modeloTablaTicket = new DefaultTableModel();
+        this.modeloTicket = new DefaultListModel();
         initComponents();
         this.blob = new GestionBlob();
         this.cbd = new ConsultasDb();
@@ -106,10 +107,7 @@ public class InterfazUsuario extends javax.swing.JFrame {
         botonesRefrescos.add(this.btnRefresco14);
         botonesRefrescos.add(this.btnRefresco15);
         botonesRefrescos.add(this.btnRefresco16);
-        
-       
-        
-        
+         
     }
     
     public void cargarBotones() throws SQLException{
@@ -127,7 +125,6 @@ public class InterfazUsuario extends javax.swing.JFrame {
                 this.listadoCafe.add(prods.getListadoProductos().get(i));
             }else if (prods.getListadoProductos().get(i).getTipo() == "refresco"){
                 this.listadoRefrescos.add(this.prods.getListadoProductos().get(i));
-                
             }
         }
         System.out.println(this.listadoCafe);
@@ -142,7 +139,35 @@ public class InterfazUsuario extends javax.swing.JFrame {
     
     private void pulsarProducto(int id){
         
+        
+        
+        this.listadoCafe = new ArrayList<Producto>();
+        this.listadoRefrescos = new ArrayList<Producto>();
+        //this.modeloTicket.clear();
+        
+        
+        
+        for (int i = 0; i < prods.getListadoProductos().size(); i++) {
+            if(prods.getListadoProductos().get(i).getTipo().equals("cafe") && prods.getListadoProductos().get(i)!=null ){
+                this.listadoCafe.add(prods.getListadoProductos().get(i));
+            }else if (prods.getListadoProductos().get(i).getTipo() == "refresco"){
+                this.listadoRefrescos.add(this.prods.getListadoProductos().get(i));
+            }
+        }
+        
+            this.modeloTicket.addElement(listadoCafe.get(id).getNombre()+"    |    "+listadoCafe.get(id).getPvp()); 
+        
     }
+    
+    
+        
+        
+        
+        
+            
+            
+        
+    
     
 //    void limpiartabla() {
 //
@@ -290,6 +315,11 @@ public class InterfazUsuario extends javax.swing.JFrame {
         panelCafes.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnCafe1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnCafe1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCafe1ActionPerformed(evt);
+            }
+        });
         panelCafes.add(btnCafe1, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 26, 99, 70));
 
         lblCafe1.setBackground(new java.awt.Color(102, 102, 102));
@@ -301,6 +331,11 @@ public class InterfazUsuario extends javax.swing.JFrame {
         panelCafes.add(lblCafe1, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 102, 99, 25));
 
         btnCafe2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnCafe2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCafe2ActionPerformed(evt);
+            }
+        });
         panelCafes.add(btnCafe2, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 26, 99, 70));
 
         lblCafe2.setBackground(new java.awt.Color(102, 102, 102));
@@ -312,6 +347,11 @@ public class InterfazUsuario extends javax.swing.JFrame {
         panelCafes.add(lblCafe2, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 102, 99, 25));
 
         btnCafe3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnCafe3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCafe3ActionPerformed(evt);
+            }
+        });
         panelCafes.add(btnCafe3, new org.netbeans.lib.awtextra.AbsoluteConstraints(249, 26, 99, 70));
 
         lblCafe3.setBackground(new java.awt.Color(102, 102, 102));
@@ -788,11 +828,7 @@ public class InterfazUsuario extends javax.swing.JFrame {
         jLabel19.setForeground(new java.awt.Color(204, 204, 204));
         jLabel19.setText("TICKET");
 
-        ticket.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
+        ticket.setModel(this.modeloTicket);
         jScrollPane2.setViewportView(ticket);
 
         javax.swing.GroupLayout panelTicketLayout = new javax.swing.GroupLayout(panelTicket);
@@ -886,6 +922,11 @@ public class InterfazUsuario extends javax.swing.JFrame {
         btnBorrarTeclado.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         btnBorrarTeclado.setForeground(new java.awt.Color(102, 102, 102));
         btnBorrarTeclado.setText("BORRAR");
+        btnBorrarTeclado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBorrarTecladoActionPerformed(evt);
+            }
+        });
 
         btnOkTeclado.setBackground(new java.awt.Color(0, 204, 102));
         btnOkTeclado.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
@@ -989,6 +1030,28 @@ public class InterfazUsuario extends javax.swing.JFrame {
     private void btnOkTecladoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOkTecladoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnOkTecladoActionPerformed
+
+    private void btnCafe1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCafe1ActionPerformed
+        // TODO add your handling code here:
+        pulsarProducto(1);
+    }//GEN-LAST:event_btnCafe1ActionPerformed
+
+    private void btnCafe2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCafe2ActionPerformed
+        // TODO add your handling code here:
+        pulsarProducto(2);
+    }//GEN-LAST:event_btnCafe2ActionPerformed
+
+    private void btnCafe3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCafe3ActionPerformed
+        // TODO add your handling code here:
+        pulsarProducto(3);
+    }//GEN-LAST:event_btnCafe3ActionPerformed
+
+    private void btnBorrarTecladoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarTecladoActionPerformed
+        // TODO add your handling code here:
+        if(ticket.getSelectedIndex()>=0){
+            this.ticket.remove(ticket.getSelectedIndex());
+        }
+    }//GEN-LAST:event_btnBorrarTecladoActionPerformed
 
     /**
      * @param args the command line arguments

@@ -9,10 +9,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import TPV.Model.Usuario;
 
-/**
- *
- * @author drofe
- */
+
 public class lblImageUser extends JLabel {
     
     Usuario user;
