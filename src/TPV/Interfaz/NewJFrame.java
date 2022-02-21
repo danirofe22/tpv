@@ -17,10 +17,8 @@ import TPV.Model.Usuario;
 import TPV.Model.Venta;
 import TPV.Gestion.Ventas;
 
-/**
- *
- * @author drofe
- */
+
+
 public class NewJFrame extends javax.swing.JFrame {
 
     

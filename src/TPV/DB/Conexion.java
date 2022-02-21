@@ -11,12 +11,11 @@ import java.sql.SQLException;
 
 /**
  *Permite crear conexion con servidor
- * @author drofe
  */
 public class Conexion {
 
     //Constantes para establecer la conexion con la BBDD
-    private final String usuario= "userdb";
+    private final String usuario= "dani";
     private final String password = "1234";
     private final String host = "localhost";
     private final String db = "cafe";

@@ -8,10 +8,8 @@ package TPV.Gestion;
 import TPV.Model.Producto;
 import java.util.ArrayList;
 
-/**
- *
- * @author drofe
- */
+
+
 public class Productos {
     private ArrayList<Producto> listadoProductos;
 

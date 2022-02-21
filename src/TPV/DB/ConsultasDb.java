@@ -16,10 +16,7 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author drofe
- */
+
 public class ConsultasDb {
     private Conexion con;
     private GestionBlob gb;

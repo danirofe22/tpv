@@ -22,10 +22,8 @@ import javax.swing.ImageIcon;
 import java.sql.Blob;
 import javax.imageio.ImageIO;
 
-/**
- *
- * @author drofe
- */
+
+
 public class GestionBlob {
     Conexion con;
     
@@ -153,10 +151,9 @@ public class GestionBlob {
    
         this.con.conectar();
         
-        sql = "SELECT imagen FROM usuarios WHERE idProducto = ?";
+        sql = String.format("SELECT imagen FROM productos WHERE idProducto = %s", idProducto);
         try {
             pstm = con.conexion.prepareStatement(sql);
-            pstm.setInt(1, idProducto);
             
             ResultSet rs = pstm.executeQuery();
             while(rs.next()){
