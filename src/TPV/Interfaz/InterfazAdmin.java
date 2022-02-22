@@ -858,6 +858,7 @@ public class InterfazAdmin extends javax.swing.JFrame {
             }
         } catch (SQLException ex) {
                 Logger.getLogger(InterfazAdmin.class.getName()).log(Level.SEVERE, null, ex);
+                
             }
     }//GEN-LAST:event_btnGuardarUsuarioActionPerformed
 
