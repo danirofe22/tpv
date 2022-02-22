@@ -25,11 +25,13 @@ public class Login extends javax.swing.JFrame {
     Usuarios userList;
     InterfazUsuario iff = new InterfazUsuario();
     Usuarios userList2;
+    InterfazAdmin iuAdmin;
     
     /**
      * Creates new form Login
      */
     public Login() throws SQLException {
+        this.iuAdmin = new InterfazAdmin();
         initComponents();
         this.Gb = new GestionBlob();
         this.cbd = new ConsultasDb();
@@ -37,7 +39,8 @@ public class Login extends javax.swing.JFrame {
         cargarUsuarios();
     }
     
-    public Login(Login l) {
+    public Login(Login l) throws SQLException {
+        this.iuAdmin = new InterfazAdmin();
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
@@ -484,15 +487,39 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioActionPerformed
-       if(!this.txtUsuario.getText().isEmpty() && !this.txtContraseña.getText().isEmpty()) {          
-        if(cbd.logearUsuario(Integer.parseInt(this.txtUsuario.getText()), Integer.parseInt(this.txtContraseña.getText()))) {
-        iff.setVisible(true);
-        this.setVisible(false);
-        } else {
-            JOptionPane.showMessageDialog(null,
-                        "Error: Codigo incorrecto", "Error!",
-                        JOptionPane.ERROR_MESSAGE);
-        }
+//       if(!this.txtUsuario.getText().isEmpty() && !this.txtContraseña.getText().isEmpty()) {          
+//        if(cbd.logearUsuario(Integer.parseInt(this.txtUsuario.getText()), Integer.parseInt(this.txtContraseña.getText()))) {
+//        iff.setVisible(true);
+//        this.setVisible(false);
+//        } else {
+//            JOptionPane.showMessageDialog(null,
+//                        "Error: Codigo incorrecto", "Error!",
+//                        JOptionPane.ERROR_MESSAGE);
+//        }
+//       } else {
+//           JOptionPane.showMessageDialog(null,
+//                        "Error: Rellena los campos", "Error!",
+//                        JOptionPane.ERROR_MESSAGE);
+//       }
+
+
+
+        if(!this.txtUsuario.getText().isEmpty() && !this.txtContraseña.getText().isEmpty()) {          
+            int resultadoLog = this.cbd.logearUsuario2(Integer.parseInt(this.txtUsuario.getText()), Integer.parseInt(this.txtContraseña.getText()));
+            if(resultadoLog == 1){
+                this.setVisible(false);
+                this.iuAdmin.setVisible(true);
+            }else if(resultadoLog == 2){
+                this.setVisible(false);
+                this.iff.setVisible(true);
+            }else{
+                 JOptionPane.showMessageDialog(null, "Error: Codigo incorrecto", "Error!", JOptionPane.ERROR_MESSAGE);
+            }
+            
+            
+        
+           
+       
        } else {
            JOptionPane.showMessageDialog(null,
                         "Error: Rellena los campos", "Error!",

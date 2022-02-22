@@ -36,13 +36,17 @@ public class InterfazUsuario extends javax.swing.JFrame {
     /**
      * Creates new form InterfazUsuario
      */
-    public InterfazUsuario() throws SQLException {
+    public InterfazUsuario(){
         this.modeloTablaTicket = new DefaultTableModel();
         this.modeloTicket = new DefaultListModel();
         initComponents();
         this.blob = new GestionBlob();
         this.cbd = new ConsultasDb();
-        this.cargarBotones();
+        try {
+            this.cargarBotones();
+        } catch (SQLException ex) {
+            Logger.getLogger(InterfazUsuario.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     
@@ -86,8 +90,6 @@ public class InterfazUsuario extends javax.swing.JFrame {
         labelCafe.add(this.lblCafe14);
         labelCafe.add(this.lblCafe15);
         labelCafe.add(this.lblCafe16);
-        
-        
         
         this.botonesRefrescos = new ArrayList<>();
         
@@ -1083,11 +1085,8 @@ public class InterfazUsuario extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                try {
                     new InterfazUsuario().setVisible(true);
-                } catch (SQLException ex) {
-                    Logger.getLogger(InterfazUsuario.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                
             }
         });
     }

@@ -9,6 +9,7 @@ import TPV.Gestion.GestionBlob;
 import TPV.Model.Producto;
 import TPV.Model.Usuario;
 import TPV.Model.Venta;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -73,11 +74,16 @@ public class ConsultasDb {
     }
     
     public void modificarUsuario(Usuario user) throws SQLException{
-        boolean resultado = false;
+        PreparedStatement pstmt;
         this.con.conectar();
-        Statement sentencia  = this.con.conexion.createStatement();
-        String sql  = String.format("UPDATE cafe.usuarios SET nombre =('%s'), apellidos = ('%s'), login = (%s), password = (%s) WHERE login = (%s)", user.getNombre(), user.getApellidos(), user.getLogin(), user.getPassword(), user.getLogin());
-        resultado = sentencia.execute(sql);
+        String sql  = "UPDATE cafe.usuarios SET nombre = ?, apellidos = ?, login = ?, password = ?, rol = ? WHERE login = (?)";
+        pstmt = this.con.conexion.prepareStatement(sql);
+        pstmt.setString(1, user.getNombre());
+        pstmt.setString(2, user.getApellidos());
+        pstmt.setInt(3, user.getLogin());
+        pstmt.setInt(4, user.getPassword());
+        pstmt.setInt(5, user.getRol());
+        pstmt.execute(sql);
         this.con.desconectar();
     }
     
@@ -104,6 +110,27 @@ public class ConsultasDb {
             Logger.getLogger(ConsultasDb.class.getName()).log(Level.SEVERE, null, ex);
         }
         return logged;
+    }
+    
+    public int logearUsuario2(int user, int pass) {
+       int tipo = 0;
+        try {
+            
+            this.con.conectar();
+            Statement sentencia  = this.con.conexion.createStatement();
+            ResultSet rs;
+            String sql = "SELECT * FROM usuarios WHERE login =" + user + " and password =" + pass;
+            rs = sentencia.executeQuery(sql);
+            rs = sentencia.getResultSet();
+            
+            while(rs.next()) {
+                tipo  = rs.getInt(6);
+                
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ConsultasDb.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return tipo;
     }
     
     public ArrayList<Integer> listarUsuarios() throws SQLException{
@@ -134,7 +161,7 @@ public class ConsultasDb {
         sentencia.execute(sql);
         rs = sentencia.getResultSet();
         while(rs.next()){
-            Usuario user = new Usuario(rs.getString(1), rs.getString(2), rs.getInt(3), rs.getInt(4), gb.getFotoEmpleado(3));
+            Usuario user = new Usuario(rs.getString(1), rs.getString(2), rs.getInt(3), rs.getInt(4), gb.getFotoEmpleado(3), rs.getInt(6));
             listLogin.add(user);
         }
         return listLogin;
@@ -145,7 +172,7 @@ public class ConsultasDb {
         this.con.conectar();//Establezco la conexion con la base de datos
         Statement sentencia = this.con.conexion.createStatement();//Creo el nuevo flujo para la sentencia
         //Creo la sentencia sql
-        String sql = String.format("INSERT INTO cafe.productos (nombre, pvp, stock, idProducto, tipo, imagen) values ('%s',%s,%s,%s,'%s',null)", prod.getNombre(),prod.getPvp(), prod.getStock(), prod.getIdProducto(), prod.getTipo());
+        String sql = String.format("INSERT INTO cafe.productos (nombre, pvp, stock, idProducto, tipo, imagen) values ('%s',%s,%s,%s,'%s',null)", prod.getNombre(),prod.getPvp(), prod.getStock(), prod.getIdProducto(), prod.getTipo(), null);
         resultado = sentencia.execute(sql);//Ejecuto la sentencia sql
         this.con.desconectar();//Me desconecto de la base de datos
         return resultado;//Devuelto el resultado de ejecutar la sentencia.
@@ -165,7 +192,7 @@ public class ConsultasDb {
         boolean resultado = false;
         this.con.conectar();
         Statement sentencia  = this.con.conexion.createStatement();
-        String sql  = String.format("UPDATE cafe.productos SET nombre =('%s'), pvp = (%s), stock = (%s), idProducto = (%s), tipo = ('%s') WHERE idProducto = (%s)", prod.getNombre(), prod.getPvp(), prod.getStock(), prod.getIdProducto(), prod.getIdProducto(), prod.getTipo());
+        String sql  = String.format("UPDATE productos SET nombre =('%s'), pvp = (%s), stock = (%s), idProducto = (%s), tipo = ('%s'), imagen = (%s) WHERE idProducto = (%s)", prod.getNombre(), prod.getPvp(), prod.getStock(), prod.getIdProducto(), prod.getIdProducto(), prod.getTipo(), null);
         resultado = sentencia.execute(sql);
         this.con.desconectar();
     }

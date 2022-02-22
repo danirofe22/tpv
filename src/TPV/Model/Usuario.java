@@ -16,6 +16,7 @@ public class Usuario {
     private int login;
     private int password;
     private ImageIcon img;
+    private int rol;
     
     public Usuario(){
         this.nombre = "";
@@ -23,14 +24,16 @@ public class Usuario {
         this.login = 0;
         this.password = 0;
         this.img = new ImageIcon();
+        this.rol = 0;
     }
 
-    public Usuario(String nombre, String apellidos, int login, int password, ImageIcon img) {
+    public Usuario(String nombre, String apellidos, int login, int password, ImageIcon img, int rol) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.login = login;
         this.password = password;
         this.img = img;
+        this.rol = rol;
     }
 
     public String getNombre() {
@@ -53,6 +56,10 @@ public class Usuario {
         return img;
     }
 
+    public int getRol() {
+        return rol;
+    }
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -73,6 +80,10 @@ public class Usuario {
         this.img = img;
     }
 
+    public void setRol(int rol) {
+        this.rol = rol;
+    }
+    
     @Override
     public String toString() {
         return "Usuario{" + "nombre=" + nombre + ", apellidos=" + apellidos + ", login=" + login + ", password=" + password + ", img=" + img + '}';

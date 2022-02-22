@@ -19,7 +19,7 @@ import TPV.Gestion.Ventas;
 
 
 
-public class NewJFrame extends javax.swing.JFrame {
+public class InterfazAdmin extends javax.swing.JFrame {
 
     
     DefaultListModel modeloListaUsuario;
@@ -33,7 +33,7 @@ public class NewJFrame extends javax.swing.JFrame {
     
     ConsultasDb cbd;
     
-    public NewJFrame() throws SQLException {
+    public InterfazAdmin() throws SQLException {
         this.modeloListaUsuario = new DefaultListModel();
         this.modeloListaVenta = new DefaultListModel();
         this.modeloListaProductos = new DefaultListModel();
@@ -122,6 +122,9 @@ public class NewJFrame extends javax.swing.JFrame {
         txtIdProductoProducto = new javax.swing.JTextField();
         lblTipoProducto = new javax.swing.JLabel();
         txtTipoProductos = new javax.swing.JTextField();
+        txtImagenProductos = new javax.swing.JTextField();
+        lblImagenProducto = new javax.swing.JLabel();
+        btnAbrirImagenProductos1 = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         panelListaProductos = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -163,6 +166,8 @@ public class NewJFrame extends javax.swing.JFrame {
         btnEliminarUsuario = new javax.swing.JButton();
         btnNuevoUsuario = new javax.swing.JButton();
         btnGuardarUsuario = new javax.swing.JButton();
+        txtImangeUsuario = new javax.swing.JTextField();
+        btnAbrirImagenUsuario1 = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -258,6 +263,28 @@ public class NewJFrame extends javax.swing.JFrame {
 
         txtTipoProductos.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
 
+        txtImagenProductos.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        txtImagenProductos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtImagenProductosActionPerformed(evt);
+            }
+        });
+
+        lblImagenProducto.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        lblImagenProducto.setForeground(new java.awt.Color(255, 255, 255));
+        lblImagenProducto.setText("Imagen:");
+
+        btnAbrirImagenProductos1.setBackground(new java.awt.Color(255, 153, 0));
+        btnAbrirImagenProductos1.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        btnAbrirImagenProductos1.setForeground(new java.awt.Color(255, 255, 255));
+        btnAbrirImagenProductos1.setText("Buscar archivo");
+        btnAbrirImagenProductos1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 51, 51), 4));
+        btnAbrirImagenProductos1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAbrirImagenProductos1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelProductosLayout = new javax.swing.GroupLayout(panelProductos);
         panelProductos.setLayout(panelProductosLayout);
         panelProductosLayout.setHorizontalGroup(
@@ -265,21 +292,8 @@ public class NewJFrame extends javax.swing.JFrame {
             .addGroup(panelProductosLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addGroup(panelProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelProductosLayout.createSequentialGroup()
-                        .addGroup(panelProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblTipoProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(panelProductosLayout.createSequentialGroup()
-                                .addComponent(btnNuevoProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnGuardarProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnEliminarProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelProductosLayout.createSequentialGroup()
                         .addGroup(panelProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(panelProductosLayout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(txtTipoProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(panelProductosLayout.createSequentialGroup()
                                 .addComponent(lblIdProductoProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -289,15 +303,32 @@ public class NewJFrame extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(txtStockProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelProductosLayout.createSequentialGroup()
-                                .addComponent(lblPvpProducto, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
+                                .addComponent(lblPvpProducto, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
                                 .addGap(18, 18, 18)
                                 .addComponent(txtPvpProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelProductosLayout.createSequentialGroup()
                                 .addComponent(lblNombreProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtNombreProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(16, 16, 16)))
-                .addContainerGap())
+                                .addComponent(txtNombreProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(panelProductosLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(panelProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtTipoProductos, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+                                    .addComponent(txtImagenProductos)
+                                    .addComponent(btnAbrirImagenProductos1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(26, 26, 26))
+                    .addGroup(panelProductosLayout.createSequentialGroup()
+                        .addGroup(panelProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelProductosLayout.createSequentialGroup()
+                                .addComponent(btnNuevoProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnGuardarProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnEliminarProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(panelProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(lblImagenProducto, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblTipoProducto, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         panelProductosLayout.setVerticalGroup(
             panelProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -322,7 +353,13 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addGroup(panelProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblTipoProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtTipoProductos))
-                .addGap(178, 178, 178)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panelProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblImagenProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtImagenProductos))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnAbrirImagenProductos1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(90, 90, 90)
                 .addGroup(panelProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnEliminarProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnGuardarProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -553,7 +590,7 @@ public class NewJFrame extends javax.swing.JFrame {
             panelListaVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelListaVentasLayout.createSequentialGroup()
                 .addGap(6, 6, 6)
-                .addComponent(lblVentas, javax.swing.GroupLayout.PREFERRED_SIZE, 44, Short.MAX_VALUE)
+                .addComponent(lblVentas, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -686,6 +723,19 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
+        txtImangeUsuario.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+
+        btnAbrirImagenUsuario1.setBackground(new java.awt.Color(255, 153, 0));
+        btnAbrirImagenUsuario1.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        btnAbrirImagenUsuario1.setForeground(new java.awt.Color(255, 255, 255));
+        btnAbrirImagenUsuario1.setText("Eliminar");
+        btnAbrirImagenUsuario1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 102, 255), 4));
+        btnAbrirImagenUsuario1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAbrirImagenUsuario1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelUsuariosLayout = new javax.swing.GroupLayout(panelUsuarios);
         panelUsuarios.setLayout(panelUsuariosLayout);
         panelUsuariosLayout.setHorizontalGroup(
@@ -700,9 +750,6 @@ public class NewJFrame extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(btnEliminarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panelUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(panelUsuariosLayout.createSequentialGroup()
-                            .addComponent(lblImagenUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(170, 170, 170))
                         .addGroup(panelUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelUsuariosLayout.createSequentialGroup()
                                 .addComponent(lblPasswordUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -721,7 +768,13 @@ public class NewJFrame extends javax.swing.JFrame {
                                     .addGroup(panelUsuariosLayout.createSequentialGroup()
                                         .addComponent(lblNombreUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(txtNombreUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                                        .addComponent(txtNombreUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGroup(panelUsuariosLayout.createSequentialGroup()
+                            .addComponent(lblImagenUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addGroup(panelUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(btnAbrirImagenUsuario1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(txtImangeUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)))))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
         panelUsuariosLayout.setVerticalGroup(
@@ -744,8 +797,12 @@ public class NewJFrame extends javax.swing.JFrame {
                     .addComponent(txtPasswordUsuario)
                     .addComponent(lblPasswordUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(lblImagenUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 178, Short.MAX_VALUE)
+                .addGroup(panelUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblImagenUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtImangeUsuario))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnAbrirImagenUsuario1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 135, Short.MAX_VALUE)
                 .addGroup(panelUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnEliminarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnGuardarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -789,19 +846,18 @@ public class NewJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnNuevoProductosActionPerformed
 
     //BOTONES GUARDAR
-    
     private void btnGuardarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarUsuarioActionPerformed
         // TODO add your handling code here:
         try {
             if(txtLoginUsuario.getText().equals("")){
-                    this.cbd.insertarUsuario(new Usuario(this.txtNombreUsuario.getText(),this.txtApellidosUsuario.getText(),0 ,Integer.parseInt(this.txtPasswordUsuario.getText()), null));
+                    //this.cbd.insertarUsuario(new Usuario(this.txtNombreUsuario.getText(),this.txtApellidosUsuario.getText(),0 ,Integer.parseInt(this.txtPasswordUsuario.getText()), null));
                     this.cargarUsuarios();
             }else{
-                this.cbd.modificarUsuario(new Usuario(this.txtNombreUsuario.getText(),this.txtApellidosUsuario.getText(),Integer.parseInt(this.txtLoginUsuario.getText()),Integer.parseInt(this.txtPasswordUsuario.getText()), null));
+               // this.cbd.modificarUsuario(new Usuario(this.txtNombreUsuario.getText(),this.txtApellidosUsuario.getText(),Integer.parseInt(this.txtLoginUsuario.getText()),Integer.parseInt(this.txtPasswordUsuario.getText()), null));
                 this.cargarUsuarios();
             }
         } catch (SQLException ex) {
-                Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(InterfazAdmin.class.getName()).log(Level.SEVERE, null, ex);
             }
     }//GEN-LAST:event_btnGuardarUsuarioActionPerformed
 
@@ -816,7 +872,7 @@ public class NewJFrame extends javax.swing.JFrame {
                     this.cargarVentas(); 
             }
         } catch (SQLException ex) {
-                Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(InterfazAdmin.class.getName()).log(Level.SEVERE, null, ex);
             }
     }//GEN-LAST:event_btnGuardarVentasActionPerformed
 
@@ -831,12 +887,11 @@ public class NewJFrame extends javax.swing.JFrame {
                     this.cargarProductos();
             }
         } catch (SQLException ex) {
-                Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(InterfazAdmin.class.getName()).log(Level.SEVERE, null, ex);
           }
     }//GEN-LAST:event_btnGuardarProductosActionPerformed
 
     //bOTONES ELIMINAR
-    
     private void btnEliminarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarUsuarioActionPerformed
         // TODO add your handling code here:
         if(listUsuarios.getSelectedIndex()>=0){
@@ -844,7 +899,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 this.cbd.eliminarUsuario(this.listadoUsuarios.get(listUsuarios.getSelectedIndex()));
                 cargarUsuarios();
             } catch (SQLException ex) {
-                Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(InterfazAdmin.class.getName()).log(Level.SEVERE, null, ex);
             }
             
         }
@@ -857,7 +912,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 this.cbd.eliminarVenta(this.listadoVentas.get(this.listVentas.getSelectedIndex()));
                 cargarVentas();
             } catch (SQLException ex) {
-                Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(InterfazAdmin.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         
@@ -870,12 +925,13 @@ public class NewJFrame extends javax.swing.JFrame {
                 this.cbd.eliminarProducto(this.listadoProductos.get(this.listProductos.getSelectedIndex()));
                 cargarProductos();
             } catch (SQLException ex) {
-                Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(InterfazAdmin.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         
     }//GEN-LAST:event_btnEliminarProductosActionPerformed
 
+    //CAMBIOS DE VALORES EN LAS LISTAS
     private void listUsuariosValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listUsuariosValueChanged
         // TODO add your handling code here:
         if(listUsuarios.getSelectedIndex()>=0){
@@ -917,6 +973,18 @@ public class NewJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtIdProductoProductoActionPerformed
 
+    private void txtImagenProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtImagenProductosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtImagenProductosActionPerformed
+
+    private void btnAbrirImagenProductos1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAbrirImagenProductos1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAbrirImagenProductos1ActionPerformed
+
+    private void btnAbrirImagenUsuario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAbrirImagenUsuario1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAbrirImagenUsuario1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -928,29 +996,30 @@ public class NewJFrame extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
+                if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InterfazAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InterfazAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InterfazAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InterfazAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    new NewJFrame().setVisible(true);
+                    new InterfazAdmin().setVisible(true);
                 } catch (SQLException ex) {
-                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(InterfazAdmin.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         });
@@ -958,6 +1027,8 @@ public class NewJFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Usuarios;
+    private javax.swing.JButton btnAbrirImagenProductos1;
+    private javax.swing.JButton btnAbrirImagenUsuario1;
     private javax.swing.JButton btnEliminarProductos;
     private javax.swing.JButton btnEliminarUsuario;
     private javax.swing.JButton btnEliminarVentas;
@@ -981,6 +1052,7 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel lblApellidoUsuario;
     private javax.swing.JLabel lblIdProductoProducto;
     private javax.swing.JLabel lblIdProductoVenta;
+    private javax.swing.JLabel lblImagenProducto;
     private javax.swing.JLabel lblImagenUsuario;
     private javax.swing.JLabel lblLoginUsuario;
     private javax.swing.JLabel lblNombreProducto;
@@ -1007,6 +1079,8 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JTextField txtIdProductoProducto;
     private javax.swing.JTextField txtIdProductoVenta;
     private javax.swing.JTextField txtIdVentaVenta1;
+    private javax.swing.JTextField txtImagenProductos;
+    private javax.swing.JTextField txtImangeUsuario;
     private javax.swing.JTextField txtLoginUsuario;
     private javax.swing.JTextField txtNombreProducto;
     private javax.swing.JTextField txtNombreUsuario;
