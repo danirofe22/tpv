@@ -31,14 +31,32 @@ public class Tpv {
         ConsultasDb cdb = new ConsultasDb();
         GestionBlob blob = new GestionBlob(); 
         
-        File f = new File("img\\6.jpg");
         
         
-        Usuario user = new Usuario("David","Jimenez",0,4321, null);
-        Usuario user1 = new Usuario("Jose","Perez",0,4321, null);
-        Usuario user2 = new Usuario("Alejandr", "Lopez",0,4321, null);
+        cdb.logearUsuario2(1234, 1234);
         
-        Venta venta4 = new Venta(3, 0, 1, 0);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+//        File f = new File("img\\6.jpg");
+        
+        
+//        Usuario user = new Usuario("David","Jimenez",0,4321, null);
+//        Usuario user1 = new Usuario("Jose","Perez",0,4321, null);
+//        Usuario user2 = new Usuario("Alejandr", "Lopez",0,4321, null);
+        
+//        Venta venta4 = new Venta(3, 0, 1, 0);
         
 //        cdb.insertarVenta(venta4);
 //        

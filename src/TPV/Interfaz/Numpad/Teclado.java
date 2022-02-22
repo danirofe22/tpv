@@ -187,10 +187,9 @@ public class Teclado extends JPanel{
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnTeclado8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTeclado8ActionPerformed
-        // TODO add your handling code here:
+
         this.msg = this.msg+"8";
         System.out.println(this.msg);
-        
     }//GEN-LAST:event_btnTeclado8ActionPerformed
 
     private void btnTeclado7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTeclado7ActionPerformed
